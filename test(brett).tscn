@@ -1,6 +1,56 @@
 [gd_scene format=3 uid="uid://hl8ob4gpost1"]
 
-[ext_resource type="Script" uid="uid://yloaax7vsqf7" path="res://test(brett).gd" id="1_jxl6h"]
+[ext_resource type="Script" uid="uid://dbiv06lob67f3" path="res://movement.gd" id="1_2ycu0"]
+[ext_resource type="Texture2D" uid="uid://tvav3b4vv73h" path="res://Sprites/run_animation/run-1.png" id="2_c5txm"]
+[ext_resource type="Texture2D" uid="uid://bxv0f2wj86mf" path="res://Sprites/run_animation/run-2.png" id="3_5hgei"]
+[ext_resource type="Texture2D" uid="uid://bv483xt7f3mqy" path="res://Sprites/run_animation/run-3.png" id="4_c1tt0"]
+[ext_resource type="Texture2D" uid="uid://cgeowfwymahjd" path="res://Sprites/run_animation/run-4.png" id="5_x14f8"]
+[ext_resource type="Texture2D" uid="uid://d47e442u5fbx" path="res://Sprites/run_animation/run-5.png" id="6_uil2b"]
+[ext_resource type="Texture2D" uid="uid://bw0teaorf33bk" path="res://Sprites/run_animation/run-6.png" id="7_k6ljc"]
+[ext_resource type="Texture2D" uid="uid://b4rg5msvv4cs3" path="res://Sprites/run_animation/run-7.png" id="8_60cy3"]
+[ext_resource type="Texture2D" uid="uid://fjkstx7bt4cq" path="res://Sprites/run_animation/run-8.png" id="9_w65po"]
 
-[node name="Test(brett)" type="Node2D" unique_id=284396591]
-script = ExtResource("1_jxl6h")
+[sub_resource type="SpriteFrames" id="SpriteFrames_qt2xu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c5txm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5hgei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c1tt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x14f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uil2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k6ljc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_60cy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w65po")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=466874393]
+position = Vector2(8, 26)
+script = ExtResource("1_2ycu0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1570909957]
+scale = Vector2(2.6492538, 2.6492538)
+sprite_frames = SubResource("SpriteFrames_qt2xu")
+animation = &"run"
+frame = 3
+frame_progress = 0.7346498
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=110090102]

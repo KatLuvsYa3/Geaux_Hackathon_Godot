@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://burka5cpp54y4"]
 
-[node name="Node2D" type="Node2D" unique_id=1682533530]
+[node name="Prepped 2d char" type="Node2D" unique_id=1682533530]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1623698659]

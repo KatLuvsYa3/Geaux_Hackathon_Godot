@@ -18,7 +18,6 @@ func _process(_delta: float) -> void:
 			removing.push_back(i)
 	if removing.size()>0:
 		for j in range(removing.size()-1, -1, -1):
-			print(removing[j])
 			players[removing[j]].queue_free()
 			players.remove_at(removing[j])
 	

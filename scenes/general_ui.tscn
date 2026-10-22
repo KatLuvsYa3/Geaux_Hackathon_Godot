@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://do5bysjpadurs"]
+
+[ext_resource type="FontFile" uid="uid://dmh1upj38lrfy" path="res://assets/matcha_world/Matcha World.ttf" id="1_3j6ei"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04sky"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 10
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnca7"]
+bg_color = Color(0.32024416, 0.32024416, 0.32024413, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 10
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j6ei"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.55835694, 0.9517593, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 10
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 10
+
+[node name="General UI" type="Control" unique_id=1043390723]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=246608440]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 70.0
+offset_right = 284.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(1, 0.5568628, 0.9529412, 1)
+theme_override_fonts/font = ExtResource("1_3j6ei")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_04sky")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mnca7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3j6ei")
+text = "Sample Text"

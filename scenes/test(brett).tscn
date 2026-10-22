@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://hl8ob4gpost1"]
+
+[ext_resource type="Script" uid="uid://dbiv06lob67f3" path="res://scripts/movement.gd" id="1_t0jjk"]
+[ext_resource type="Texture2D" uid="uid://tvav3b4vv73h" path="res://Sprites/run_animation/run-1.png" id="2_b4uan"]
+[ext_resource type="Texture2D" uid="uid://bxv0f2wj86mf" path="res://Sprites/run_animation/run-2.png" id="3_wh488"]
+[ext_resource type="Texture2D" uid="uid://bv483xt7f3mqy" path="res://Sprites/run_animation/run-3.png" id="4_xf0ay"]
+[ext_resource type="Texture2D" uid="uid://cgeowfwymahjd" path="res://Sprites/run_animation/run-4.png" id="5_ff0uj"]
+[ext_resource type="Texture2D" uid="uid://d47e442u5fbx" path="res://Sprites/run_animation/run-5.png" id="6_207cp"]
+[ext_resource type="Texture2D" uid="uid://bw0teaorf33bk" path="res://Sprites/run_animation/run-6.png" id="7_6c6f2"]
+[ext_resource type="Texture2D" uid="uid://b4rg5msvv4cs3" path="res://Sprites/run_animation/run-7.png" id="8_fd8dr"]
+[ext_resource type="Texture2D" uid="uid://fjkstx7bt4cq" path="res://Sprites/run_animation/run-8.png" id="9_jdhvf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qt2xu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b4uan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wh488")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xf0ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ff0uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_207cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6c6f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fd8dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jdhvf")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=466874393]
+position = Vector2(8, 26)
+script = ExtResource("1_t0jjk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1570909957]
+scale = Vector2(2.6492538, 2.6492538)
+sprite_frames = SubResource("SpriteFrames_qt2xu")
+animation = &"run"
+frame = 3
+frame_progress = 0.7346498
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=110090102]

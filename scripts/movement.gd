@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var max_speed = 400
 @export var move_acc_speed = 100
+@export var friction_vel: float = 0.85
+@export var friction_acc: float = 0.70
 
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var _collision_shape = $CollisionShape2D
@@ -26,7 +28,7 @@ func get_input(delta):
 		walking_velocity = walking_velocity.normalized()*max_speed
 	if velocity.length() < walking_velocity.length():
 		velocity = walking_velocity
-	walking_velocity *= 0.90*(1-delta)
+	walking_velocity *= friction_vel*(1-delta)
 
 #physisics
 func apply_force(f: Vector2):
@@ -35,19 +37,19 @@ func apply_force(f: Vector2):
 func apply_acceleration(delta):
 	velocity += acceleration*(1-delta)
 
-func friction(delta):
-	acceleration *= 0.80*(1-delta)
-	velocity *= 0.90*(1-delta)
+func apply_friction(delta):
+	acceleration *= friction_acc*(1-delta)
+	velocity *= friction_vel*(1-delta)
 
 #process
 func _physics_process(delta):
 	get_input(delta)
 	apply_acceleration(delta)
-	friction(delta)
+	apply_friction(delta)
 	
 	
 	#animation management
-	if movementKeysPressed(movements):
+	if movementKeysPressed(movements) and velocity.length() > 25:
 		_animated_sprite.play()
 	else:
 		_animated_sprite.stop()

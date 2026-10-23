@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://hl8ob4gpost1"]
 
 [ext_resource type="Script" uid="uid://dbiv06lob67f3" path="res://scripts/movement.gd" id="1_t0jjk"]
-[ext_resource type="Texture2D" uid="uid://tvav3b4vv73h" path="res://Sprites/run_animation/run-1.png" id="2_b4uan"]
-[ext_resource type="Texture2D" uid="uid://bxv0f2wj86mf" path="res://Sprites/run_animation/run-2.png" id="3_wh488"]
-[ext_resource type="Texture2D" uid="uid://bv483xt7f3mqy" path="res://Sprites/run_animation/run-3.png" id="4_xf0ay"]
-[ext_resource type="Texture2D" uid="uid://cgeowfwymahjd" path="res://Sprites/run_animation/run-4.png" id="5_ff0uj"]
-[ext_resource type="Texture2D" uid="uid://d47e442u5fbx" path="res://Sprites/run_animation/run-5.png" id="6_207cp"]
-[ext_resource type="Texture2D" uid="uid://bw0teaorf33bk" path="res://Sprites/run_animation/run-6.png" id="7_6c6f2"]
-[ext_resource type="Texture2D" uid="uid://b4rg5msvv4cs3" path="res://Sprites/run_animation/run-7.png" id="8_fd8dr"]
-[ext_resource type="Texture2D" uid="uid://fjkstx7bt4cq" path="res://Sprites/run_animation/run-8.png" id="9_jdhvf"]
+[ext_resource type="Texture2D" uid="uid://tvav3b4vv73h" path="res://assets/Sprites/run_animation/run-1.png" id="2_b4uan"]
+[ext_resource type="Texture2D" uid="uid://bxv0f2wj86mf" path="res://assets/Sprites/run_animation/run-2.png" id="3_wh488"]
+[ext_resource type="Texture2D" uid="uid://bv483xt7f3mqy" path="res://assets/Sprites/run_animation/run-3.png" id="4_xf0ay"]
+[ext_resource type="Texture2D" uid="uid://cgeowfwymahjd" path="res://assets/Sprites/run_animation/run-4.png" id="5_ff0uj"]
+[ext_resource type="Texture2D" uid="uid://d47e442u5fbx" path="res://assets/Sprites/run_animation/run-5.png" id="6_207cp"]
+[ext_resource type="Texture2D" uid="uid://bw0teaorf33bk" path="res://assets/Sprites/run_animation/run-6.png" id="7_6c6f2"]
+[ext_resource type="Texture2D" uid="uid://b4rg5msvv4cs3" path="res://assets/Sprites/run_animation/run-7.png" id="8_fd8dr"]
+[ext_resource type="Texture2D" uid="uid://fjkstx7bt4cq" path="res://assets/Sprites/run_animation/run-8.png" id="9_jdhvf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qt2xu"]
 animations = [{

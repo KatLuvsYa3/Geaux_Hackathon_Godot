@@ -42,8 +42,11 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0i5l"]
+size = Vector2(75, 127)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=466874393]
-position = Vector2(8, 26)
+position = Vector2(489, 245)
 script = ExtResource("1_t0jjk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1570909957]
@@ -54,3 +57,5 @@ frame = 3
 frame_progress = 0.7346498
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=110090102]
+position = Vector2(8.5, 25.5)
+shape = SubResource("RectangleShape2D_m0i5l")

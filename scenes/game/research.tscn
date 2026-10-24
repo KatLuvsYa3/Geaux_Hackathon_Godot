@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfdumk3rk1ygp"]
 
 [ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_c2kjm"]
+[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_77c6a"]
 
 [node name="Research" type="Node2D" unique_id=42553809]
 
@@ -14,3 +15,14 @@ offset_top = -43.0
 offset_right = 52.0
 offset_bottom = -25.0
 text = "Research"
+
+[node name="Culture" type="Button" parent="." unique_id=1282042765]
+offset_left = 55.0
+offset_top = 94.0
+offset_right = 137.0
+offset_bottom = 120.0
+text = "Culture"
+script = ExtResource("2_77c6a")
+scene = "res://scenes/game/culture.tscn"
+
+[connection signal="pressed" from="Culture" to="Culture" method="_on_pressed"]

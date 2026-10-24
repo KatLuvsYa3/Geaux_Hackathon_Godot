@@ -7,6 +7,7 @@ extends Node
 @export var cardio_health = 0.8
 @export var decay_rate = 0.2
 
+@export var culture_state = 0
 @export var research_value = 0
 @export var final_research_value = 10
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5ogd1ik32oee" path="res://scripts/arm.gd" id="1_muf2m"]
 [ext_resource type="Texture2D" uid="uid://crt0c6iufjvgb" path="res://assets/Sprites/arm.png" id="2_dy6di"]
+[ext_resource type="Texture2D" uid="uid://dhxpjefr3ymju" path="res://assets/Sprites/clickedarm.png" id="3_dy6di"]
 
 [node name="Arm" type="Node2D" unique_id=1142549423]
 
@@ -10,3 +11,9 @@ z_index = 20
 texture = ExtResource("2_dy6di")
 offset = Vector2(26, 28)
 script = ExtResource("1_muf2m")
+
+[node name="ClickedArm" type="Sprite2D" parent="." unique_id=1984569383]
+visible = false
+z_index = 20
+texture = ExtResource("3_dy6di")
+offset = Vector2(26, 28)

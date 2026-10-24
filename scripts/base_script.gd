@@ -53,6 +53,8 @@ func _ready():
 	arm = get_child(1)
 	add_child(display_scene)
 	display = get_child(2)
+	display.get_child(0).max_value = base_energy
+	display.get_child(0).value = base_energy
 
 func end_game():
 	get_tree().change_scene_to_file("res://scenes/game/end_scene.tscn")

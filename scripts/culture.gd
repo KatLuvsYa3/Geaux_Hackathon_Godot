@@ -7,6 +7,7 @@ var right_drop_amount = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	BaseScript.culture_state = min((int)((BaseScript.research_value/9.0)*5.0),4)
 	get_children()[BaseScript.culture_state].visible = true
 	drop_count = 0
 	word_gauage.text = "Hungry.."

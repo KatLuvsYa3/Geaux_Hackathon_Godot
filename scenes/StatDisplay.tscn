@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cbmn6h2wx3bdf"]
+
+[ext_resource type="Texture2D" uid="uid://ddjyv8kxibfcr" path="res://assets/Sprites/energybaredmpty.png" id="2_j5wif"]
+[ext_resource type="Texture2D" uid="uid://duno6l58ske4v" path="res://assets/Sprites/energybarfull.png" id="3_mq0gc"]
+
+[node name="StatDisplay" type="Control" unique_id=1737166255]
+z_index = 50
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnergyBar" type="TextureProgressBar" parent="." unique_id=1318941892]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 14.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(2, 1)
+value = 50.0
+texture_under = ExtResource("2_j5wif")
+texture_progress = ExtResource("3_mq0gc")
+
+[node name="Label" type="Label" parent="." unique_id=893920779]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 52.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 11
+text = "Energy"
+
+[node name="Label2" type="Label" parent="." unique_id=685155217]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 2.0
+offset_right = 242.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 11
+text = "Year:"
+
+[node name="YearCount" type="Label" parent="." unique_id=201276176]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 2.0
+offset_right = 279.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 11
+text = "0"

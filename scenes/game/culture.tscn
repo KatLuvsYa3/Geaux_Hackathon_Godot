@@ -56,12 +56,15 @@ offset_bottom = 145.0
 text = "Finished?"
 script = ExtResource("7_kkb52")
 
-[node name="Label" type="Label" parent="." unique_id=402331349]
-offset_left = 7.0
-offset_top = 19.0
-offset_right = 183.0
-offset_bottom = 37.0
+[node name="Word Guage" type="Label" parent="." unique_id=402331349]
+offset_left = 5.9999995
+offset_top = 39.0
+offset_right = 116.90195
+offset_bottom = 50.839985
+rotation = -0.099062726
+theme_override_font_sizes/font_size = 10
 text = "If putting enough"
 
 [connection signal="area_entered" from="Petri" to="." method="_on_petri_area_entered"]
+[connection signal="pressed" from="BackToMain" to="." method="_on_back_to_main_pressed"]
 [connection signal="pressed" from="BackToMain" to="BackToMain" method="_on_pressed"]

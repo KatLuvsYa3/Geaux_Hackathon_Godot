@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cx16kgwk3yln3"]
 
-[ext_resource type="Script" uid="uid://opuuibjg85hh" path="res://scenes/drip.gd" id="1_1k84v"]
+[ext_resource type="Script" uid="uid://opuuibjg85hh" path="res://scripts/drip.gd" id="1_1k84v"]
 [ext_resource type="Texture2D" uid="uid://doca4g4hg1itf" path="res://assets/Sprites/pipedrop.png" id="1_2hjge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0i5l"]

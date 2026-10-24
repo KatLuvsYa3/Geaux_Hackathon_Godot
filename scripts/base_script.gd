@@ -43,25 +43,38 @@ var audio_controller_scene = preload("res://scenes/audio_controller.tscn").insta
 var arm_scene = preload("res://scenes/arm.tscn").instantiate()
 @export var arm = null
 
+var display_scene = preload("res://scenes/StatDisplay.tscn").instantiate()
+@export var display = null
+
 func _ready():
 	add_child(audio_controller_scene)
 	audio_controller = get_child(0)
 	add_child(arm_scene)
 	arm = get_child(1)
+	add_child(display_scene)
+	display = get_child(2)
 
 func end_game():
 	get_tree().change_scene_to_file("res://scenes/game/end_scene.tscn")
+
+func change_energy(x):
+	energy = x
+	display.get_child(0).value = energy
+	
+func change_year(x):
+	year = x
+	display.get_child(0).text = year.to_string()
 
 func new_year() -> void:
 	year+=1
 	if year > final_year: end_game()
 	bone_health -= decay_rate
 	cardio_health -= decay_rate
-	energy = base_energy
+	change_energy(base_energy)
 
 func do_task(en_req: int) -> bool:
 	if en_req > energy: return false
-	energy-=en_req
+	change_energy(energy-en_req)
 	return true
 
 func start_minigame(game: Minigames):

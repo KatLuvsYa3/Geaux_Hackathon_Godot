@@ -1,9 +1,137 @@
 [gd_scene format=3 uid="uid://mdocc4qxyqoh"]
 
-[ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_8erlg"]
+[ext_resource type="Texture2D" uid="uid://cs2vw3yo133xg" path="res://assets/Sprites/wires_cut.png" id="1_f4nqp"]
+[ext_resource type="Script" uid="uid://44y4i4e5dlb5" path="res://scripts/wires.gd" id="1_h67yv"]
+[ext_resource type="Texture2D" uid="uid://c5js2t0kudjwp" path="res://assets/Sprites/wires_uncut.png" id="2_4bg57"]
+[ext_resource type="Script" uid="uid://demt3i2m7he0y" path="res://scripts/cuts.gd" id="5_h67yv"]
+[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="5_wpmw1"]
+[ext_resource type="Texture2D" uid="uid://cl3lfufxiryos" path="res://assets/Sprites/square.png" id="6_gjy5t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0i5l"]
+radius = 27.979576
 
 [node name="Wire" type="Node2D" unique_id=974812941]
+script = ExtResource("1_h67yv")
 
-[node name="TemPexercise" type="Sprite2D" parent="." unique_id=1995177351]
+[node name="WiresCut" type="Sprite2D" parent="." unique_id=828039566]
 position = Vector2(128, 72)
-texture = ExtResource("1_8erlg")
+texture = ExtResource("1_f4nqp")
+
+[node name="WiresUncut" type="Sprite2D" parent="." unique_id=1073711903]
+visible = false
+position = Vector2(128, 72)
+texture = ExtResource("2_4bg57")
+
+[node name="Directions" type="Label" parent="." unique_id=33459558]
+offset_left = 23.0
+offset_top = 133.0
+offset_right = 233.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 10
+text = "Hover over the wires to fix them!"
+
+[node name="Cuts" type="Node2D" parent="." unique_id=541944733]
+script = ExtResource("5_h67yv")
+
+[node name="Cut1" type="Sprite2D" parent="Cuts" unique_id=1360464781]
+clip_children = 1
+position = Vector2(112.99999, 43)
+scale = Vector2(0.14843753, 0.13281251)
+texture = ExtResource("6_gjy5t")
+
+[node name="Area2D" type="Area2D" parent="Cuts/Cut1" unique_id=1213295988]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuts/Cut1/Area2D" unique_id=761042604]
+position = Vector2(5.139802e-05, 0)
+shape = SubResource("CircleShape2D_m0i5l")
+
+[node name="Cut2" type="Sprite2D" parent="Cuts" unique_id=206297537]
+clip_children = 1
+position = Vector2(100.99999, 53)
+scale = Vector2(0.14843753, 0.13281251)
+texture = ExtResource("6_gjy5t")
+
+[node name="Area2D" type="Area2D" parent="Cuts/Cut2" unique_id=366925066]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuts/Cut2/Area2D" unique_id=1339652545]
+position = Vector2(5.139802e-05, 0)
+shape = SubResource("CircleShape2D_m0i5l")
+
+[node name="Cut3" type="Sprite2D" parent="Cuts" unique_id=1218010953]
+clip_children = 1
+position = Vector2(150, 30)
+scale = Vector2(0.14843753, 0.13281251)
+texture = ExtResource("6_gjy5t")
+
+[node name="Area2D" type="Area2D" parent="Cuts/Cut3" unique_id=415758726]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuts/Cut3/Area2D" unique_id=912342961]
+position = Vector2(5.139802e-05, 0)
+shape = SubResource("CircleShape2D_m0i5l")
+
+[node name="Cut4" type="Sprite2D" parent="Cuts" unique_id=2002132490]
+clip_children = 1
+position = Vector2(113, 59)
+scale = Vector2(0.14843753, 0.13281251)
+texture = ExtResource("6_gjy5t")
+
+[node name="Area2D" type="Area2D" parent="Cuts/Cut4" unique_id=672867670]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuts/Cut4/Area2D" unique_id=1329683788]
+position = Vector2(5.139802e-05, 0)
+shape = SubResource("CircleShape2D_m0i5l")
+
+[node name="Cut5" type="Sprite2D" parent="Cuts" unique_id=708438554]
+clip_children = 1
+position = Vector2(131, 86)
+scale = Vector2(0.14843753, 0.13281251)
+texture = ExtResource("6_gjy5t")
+
+[node name="Area2D" type="Area2D" parent="Cuts/Cut5" unique_id=1134847917]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuts/Cut5/Area2D" unique_id=1219917688]
+position = Vector2(5.139802e-05, 0)
+shape = SubResource("CircleShape2D_m0i5l")
+
+[node name="Cut6" type="Sprite2D" parent="Cuts" unique_id=880445940]
+clip_children = 1
+position = Vector2(142.99998, 90)
+scale = Vector2(0.14843753, 0.13281251)
+texture = ExtResource("6_gjy5t")
+
+[node name="Area2D" type="Area2D" parent="Cuts/Cut6" unique_id=1730066197]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuts/Cut6/Area2D" unique_id=1464032263]
+position = Vector2(5.139802e-05, 0)
+shape = SubResource("CircleShape2D_m0i5l")
+
+[node name="Cut7" type="Sprite2D" parent="Cuts" unique_id=100118984]
+clip_children = 1
+position = Vector2(129, 117)
+scale = Vector2(0.14843753, 0.13281251)
+texture = ExtResource("6_gjy5t")
+
+[node name="Area2D" type="Area2D" parent="Cuts/Cut7" unique_id=934673309]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuts/Cut7/Area2D" unique_id=1172202339]
+position = Vector2(5.139802e-05, 0)
+shape = SubResource("CircleShape2D_m0i5l")
+
+[node name="Finish" type="Button" parent="." unique_id=1040970953]
+offset_left = 180.0
+offset_top = 101.0
+offset_right = 255.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 11
+text = "Finished?"
+script = ExtResource("5_wpmw1")
+
+[connection signal="mouse_entered" from="Cuts/Cut1/Area2D" to="Cuts" method="_on_area_2d_mouse_entered1"]
+[connection signal="mouse_entered" from="Cuts/Cut2/Area2D" to="Cuts" method="_on_area_2d_mouse_entered2"]
+[connection signal="mouse_entered" from="Cuts/Cut3/Area2D" to="Cuts" method="_on_area_2d_mouse_entered3"]
+[connection signal="mouse_entered" from="Cuts/Cut4/Area2D" to="Cuts" method="_on_area_2d_mouse_entered4"]
+[connection signal="mouse_entered" from="Cuts/Cut5/Area2D" to="Cuts" method="_on_area_2d_mouse_entered5"]
+[connection signal="mouse_entered" from="Cuts/Cut6/Area2D" to="Cuts" method="_on_area_2d_mouse_entered6"]
+[connection signal="mouse_entered" from="Cuts/Cut7/Area2D" to="Cuts" method="_on_area_2d_mouse_entered7"]
+[connection signal="pressed" from="Finish" to="." method="_on_finish_pressed"]
+[connection signal="pressed" from="Finish" to="Finish" method="_on_pressed"]

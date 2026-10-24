@@ -11,6 +11,7 @@ enum Minigames{
 	NOT_IN
 }
 
+var broken_mingames = []
 
 enum GameState {
 	START,
@@ -73,6 +74,16 @@ func change_energy(x):
 func fade_change():
 	fade.play()
 
+func random_minigame():
+	var x = randi_range(0,5)
+	match x:
+		0: broken_mingames.append(Minigames.TREADMILL)
+		1: broken_mingames.append(Minigames.WEIGHTLIFTING)
+		2: broken_mingames.append(Minigames.CULTURE)
+		3: broken_mingames.append(Minigames.SCANNING)
+		4: broken_mingames.append(Minigames.CATASTROPHE)
+		5: broken_mingames.append(Minigames.MAINTANENCE)
+
 func new_year() -> void:
 	year+=1
 	display.get_child(3).text = str(year)
@@ -81,12 +92,16 @@ func new_year() -> void:
 		end_game()
 	bone_health -= decay_rate
 	cardio_health -= decay_rate
+	broken_mingames.append(random_minigame())
 	change_energy(base_energy)
 
 func do_task(en_req: int) -> bool:
 	if en_req > energy: return false
 	change_energy(energy-en_req)
 	return true
+
+func maintainance_task_completed():
+	broken_mingames.pop_front()
 
 func start_minigame(game: Minigames):
 	match(game):

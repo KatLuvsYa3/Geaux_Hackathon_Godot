@@ -17,11 +17,11 @@ offset_bottom = 48.0
 text = "Maintainance"
 
 [node name="Treadmill" type="Button" parent="." unique_id=1058060577]
-offset_left = 72.0
+offset_left = 83.0
 offset_top = 91.0
-offset_right = 148.0
-offset_bottom = 119.0
-text = "Wires"
+offset_right = 151.0
+offset_bottom = 117.0
+text = "Fix"
 script = ExtResource("2_8e6wv")
 scene = "res://scenes/game/wires.tscn"
 minigame = 5

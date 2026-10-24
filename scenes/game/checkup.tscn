@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://wo34hesdre0q"]
+
+[ext_resource type="Texture2D" uid="uid://c3jr1pwuxgckt" path="res://assets/Sprites/checkup.png" id="1_lk3cu"]
+[ext_resource type="Script" uid="uid://b5xfcf1boyjl1" path="res://scripts/checkup.gd" id="1_vf5wq"]
+[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="3_rrnpn"]
+
+[node name="Checkup" type="Node2D" unique_id=986519064]
+script = ExtResource("1_vf5wq")
+
+[node name="Checkup" type="Sprite2D" parent="." unique_id=2099709860]
+position = Vector2(128, 72)
+texture = ExtResource("1_lk3cu")
+
+[node name="Label" type="Label" parent="." unique_id=332719005]
+offset_left = 92.0
+offset_top = 29.0
+offset_right = 163.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 16
+text = "Health:"
+
+[node name="Percentage" type="Label" parent="." unique_id=2044861641]
+offset_left = 80.0
+offset_top = 67.99999
+offset_right = 169.0
+offset_bottom = 89.99999
+rotation = 0.10581868
+theme_override_font_sizes/font_size = 20
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Finish" type="Button" parent="." unique_id=827502146]
+offset_left = 180.0
+offset_top = 101.0
+offset_right = 255.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 11
+text = "Finished?"
+script = ExtResource("3_rrnpn")
+
+[connection signal="pressed" from="Finish" to="." method="_on_finish_pressed"]
+[connection signal="pressed" from="Finish" to="Finish" method="_on_pressed"]

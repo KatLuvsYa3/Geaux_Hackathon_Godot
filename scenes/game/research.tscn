@@ -14,16 +14,27 @@ offset_left = -85.0
 offset_top = -43.0
 offset_right = 52.0
 offset_bottom = -25.0
-text = "Research"
+text = "Medbay"
 
 [node name="Culture" type="Button" parent="." unique_id=1282042765]
-offset_left = 55.0
-offset_top = 94.0
-offset_right = 137.0
-offset_bottom = 120.0
+offset_left = 12.0
+offset_top = 81.0
+offset_right = 94.0
+offset_bottom = 107.0
 text = "Culture"
 script = ExtResource("2_77c6a")
 scene = "res://scenes/game/culture.tscn"
 minigame = 2
 
+[node name="Checkup" type="Button" parent="." unique_id=1618481827]
+offset_left = 130.0
+offset_top = 82.0
+offset_right = 227.0
+offset_bottom = 108.0
+text = "Check UP"
+script = ExtResource("2_77c6a")
+scene = "res://scenes/game/checkup.tscn"
+minigame = 3
+
 [connection signal="pressed" from="Culture" to="Culture" method="_on_pressed"]
+[connection signal="pressed" from="Checkup" to="Checkup" method="_on_pressed"]

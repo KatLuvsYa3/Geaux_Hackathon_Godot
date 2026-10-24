@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c0uu5k01b2nmx"]
+
+[ext_resource type="Script" uid="uid://gg5fccb1rwpd" path="res://scripts/transition.gd" id="1_f0i4t"]
+[ext_resource type="Texture2D" uid="uid://clip7aqitypt2" path="res://assets/Sprites/fade.png" id="1_rerct"]
+
+[node name="Transition" type="Node2D" unique_id=1310301875]
+script = ExtResource("1_f0i4t")
+
+[node name="Fade" type="Sprite2D" parent="." unique_id=1167223180]
+z_index = 500
+position = Vector2(128, 72)
+texture = ExtResource("1_rerct")

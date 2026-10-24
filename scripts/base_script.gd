@@ -16,9 +16,14 @@ extends Node
 var audio_controller_scene = preload("res://scenes/audio_controller.tscn").instantiate()
 @export var audio_controller = null
 
+var arm_scene = preload("res://scenes/arm.tscn").instantiate()
+@export var arm = null
+
 func _ready():
 	add_child(audio_controller_scene)
 	audio_controller = get_child(0)
+	add_child(arm_scene)
+	arm = get_child(1)
 
 func end_game():
 	get_tree().change_scene_to_file("res://scenes/game/end_scene.tscn")

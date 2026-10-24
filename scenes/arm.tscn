@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://crg5dujb8j18x"]
+
+[ext_resource type="Script" uid="uid://c5ogd1ik32oee" path="res://scripts/arm.gd" id="1_muf2m"]
+[ext_resource type="Texture2D" uid="uid://crt0c6iufjvgb" path="res://assets/Sprites/arm.png" id="2_dy6di"]
+
+[node name="Arm" type="Node2D" unique_id=1142549423]
+
+[node name="Arm" type="Sprite2D" parent="." unique_id=418069819]
+z_index = 20
+texture = ExtResource("2_dy6di")
+offset = Vector2(26, 28)
+script = ExtResource("1_muf2m")

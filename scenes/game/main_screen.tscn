@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://drvs57xpv1vsj"]
+
+[ext_resource type="Texture2D" uid="uid://cu7wgyju14jnj" path="res://assets/Sprites/main.png" id="1_w03e3"]
+[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_56jkj"]
+
+[node name="MainScreen" type="Node2D" unique_id=902538669]
+
+[node name="Main" type="Sprite2D" parent="." unique_id=935025308]
+position = Vector2(128, 72)
+texture = ExtResource("1_w03e3")
+
+[node name="Exercise" type="TextureButton" parent="." unique_id=1233883712]
+offset_left = 142.0
+offset_top = 60.0
+offset_right = 234.0
+offset_bottom = 122.0
+action_mode = 0
+script = ExtResource("2_56jkj")
+scene = "res://scenes/game/exercise.tscn"
+
+[node name="Maintainance" type="TextureButton" parent="." unique_id=529818312]
+offset_left = 79.0
+offset_top = 17.0
+offset_right = 119.0
+offset_bottom = 68.0
+script = ExtResource("2_56jkj")
+scene = "res://scenes/game/maintainance.tscn"
+
+[node name="Research" type="TextureButton" parent="." unique_id=167521833]
+offset_left = 7.0
+offset_top = 41.0
+offset_right = 54.0
+offset_bottom = 113.0
+script = ExtResource("2_56jkj")
+scene = "res://scenes/game/research.tscn"
+
+[connection signal="pressed" from="Exercise" to="Exercise" method="_on_pressed"]
+[connection signal="pressed" from="Maintainance" to="Maintainance" method="_on_pressed"]
+[connection signal="pressed" from="Research" to="Research" method="_on_pressed"]

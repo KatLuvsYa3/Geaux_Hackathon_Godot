@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbmn6h2wx3bdf"]
 
 [ext_resource type="Texture2D" uid="uid://ddjyv8kxibfcr" path="res://assets/Sprites/energybaredmpty.png" id="2_j5wif"]
+[ext_resource type="Texture2D" uid="uid://dkq1h7xc7wq4n" path="res://assets/Sprites/borederforenergyboard.png" id="3_6xqme"]
 [ext_resource type="Texture2D" uid="uid://duno6l58ske4v" path="res://assets/Sprites/energybarfull.png" id="3_mq0gc"]
 
 [node name="StatDisplay" type="Control" unique_id=1737166255]
@@ -49,3 +50,9 @@ offset_right = 279.0
 offset_bottom = 20.0
 theme_override_font_sizes/font_size = 11
 text = "1"
+
+[node name="Borederforenergyboard" type="Sprite2D" parent="." unique_id=627672615]
+z_index = -1
+position = Vector2(68.99999, 18)
+scale = Vector2(2.0625, 0.75)
+texture = ExtResource("3_6xqme")

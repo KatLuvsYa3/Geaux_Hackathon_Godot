@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://drvs57xpv1vsj"]
 
-[ext_resource type="Texture2D" uid="uid://cu7wgyju14jnj" path="res://assets/Sprites/main.png" id="1_w03e3"]
+[ext_resource type="Texture2D" uid="uid://b5jokneg67ruq" path="res://assets/Sprites/main.png" id="1_w03e3"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_56jkj"]
 [ext_resource type="Script" uid="uid://yjpi0cm8ucna" path="res://scripts/end_year_button.gd" id="3_yiin6"]
+[ext_resource type="Texture2D" uid="uid://dc0v8qwbe7syc" path="res://assets/Sprites/onchemdesk.png" id="4_1rkkt"]
+[ext_resource type="Texture2D" uid="uid://b5qv6cw6h7a5g" path="res://assets/Sprites/panel.png" id="5_3w53x"]
 
 [node name="MainScreen" type="Node2D" unique_id=902538669]
 
-[node name="Main" type="Sprite2D" parent="." unique_id=935025308]
+[node name="Main2" type="Sprite2D" parent="." unique_id=1647312932]
+z_index = -5
 position = Vector2(128, 72)
 texture = ExtResource("1_w03e3")
 
@@ -43,6 +46,14 @@ offset_bottom = 142.0
 theme_override_font_sizes/font_size = 11
 text = "End Year?"
 script = ExtResource("3_yiin6")
+
+[node name="Onchemdesk" type="Sprite2D" parent="." unique_id=1993259759]
+position = Vector2(32, 66)
+texture = ExtResource("4_1rkkt")
+
+[node name="Panel" type="Sprite2D" parent="." unique_id=316471582]
+position = Vector2(100, 44)
+texture = ExtResource("5_3w53x")
 
 [connection signal="pressed" from="Exercise" to="Exercise" method="_on_pressed"]
 [connection signal="pressed" from="Maintainance" to="Maintainance" method="_on_pressed"]

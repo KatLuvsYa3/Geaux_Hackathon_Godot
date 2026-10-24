@@ -18,3 +18,5 @@ text = "Treadmill"
 script = ExtResource("2_lrd20")
 scene = "res://scenes/game/treadmill.tscn"
 minigame = 0
+
+[connection signal="pressed" from="Treadmill" to="Treadmill" method="_on_pressed"]

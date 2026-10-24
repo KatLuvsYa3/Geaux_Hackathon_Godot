@@ -11,7 +11,6 @@
 script = ExtResource("1_guctc")
 
 [node name="Culture0" type="Sprite2D" parent="." unique_id=152619858]
-visible = false
 position = Vector2(-37, 72)
 texture = ExtResource("2_kkb52")
 offset = Vector2(165, 0)

@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var pipe_speed = 0.55
+var pipe_speed = 40
 var drip_time = 0.4
 var drip_timer = 0
 
@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if visible:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			$graphicbar.value -=(1-delta)*pipe_speed
+			$graphicbar.value -= (delta)*pipe_speed
 			if $graphicbar.value == 0: return 
 			drip_timer += delta
 			if drip_timer > drip_time:

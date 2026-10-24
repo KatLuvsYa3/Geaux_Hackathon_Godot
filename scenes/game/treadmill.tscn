@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnbm4weayr4yo" path="res://scripts/treadmill.gd" id="1_4qocw"]
 [ext_resource type="Texture2D" uid="uid://cg4gx6km6cs2e" path="res://assets/Sprites/circle.png" id="2_bgtwv"]
+[ext_resource type="Script" uid="uid://d4bgo44vydmb1" path="res://scripts/treadmill_collision.gd" id="2_p78m7"]
 [ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="3_t6w8w"]
 
 [sub_resource type="Curve2D" id="Curve2D_p78m7"]
@@ -28,6 +29,9 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p78m7"]
+radius = 13.0
+
 [node name="Treadmill" type="Node2D" unique_id=815005286]
 script = ExtResource("1_4qocw")
 
@@ -47,11 +51,21 @@ curve = SubResource("Curve2D_32xfs")
 
 [node name="Character" type="PathFollow2D" parent="." unique_id=295244528]
 
-[node name="Sprite2D" type="Sprite2D" parent="Character" unique_id=656795947]
+[node name="Area2D" type="Area2D" parent="Character" unique_id=1037651084]
+z_index = 7
+script = ExtResource("2_p78m7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character/Area2D" unique_id=656795947]
 z_index = 3
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_bgtwv")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" unique_id=2112793373]
+z_index = 4
+shape = SubResource("CircleShape2D_p78m7")
+
 [node name="TemPexercise" type="Sprite2D" parent="." unique_id=1496424269]
+z_index = -2
 position = Vector2(128, 72)
 texture = ExtResource("3_t6w8w")
 metadata/_edit_lock_ = true

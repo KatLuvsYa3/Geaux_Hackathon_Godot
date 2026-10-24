@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bnbm4weayr4yo" path="res://scripts/treadmill.gd" id="1_4qocw"]
 [ext_resource type="Texture2D" uid="uid://cg4gx6km6cs2e" path="res://assets/Sprites/circle.png" id="2_bgtwv"]
 [ext_resource type="Script" uid="uid://d4bgo44vydmb1" path="res://scripts/treadmill_collision.gd" id="2_p78m7"]
+[ext_resource type="Script" uid="uid://h06tsepxwgqr" path="res://scripts/tracks.gd" id="2_y7s2j"]
 [ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="3_t6w8w"]
 
 [sub_resource type="Curve2D" id="Curve2D_p78m7"]
@@ -36,6 +37,7 @@ radius = 13.0
 script = ExtResource("1_4qocw")
 
 [node name="Paths" type="Node2D" parent="." unique_id=1683773954]
+script = ExtResource("2_y7s2j")
 
 [node name="Path2D" type="Path2D" parent="Paths" unique_id=919508422]
 curve = SubResource("Curve2D_p78m7")

@@ -1,10 +1,57 @@
 [gd_scene format=3 uid="uid://buri53p5t6ef"]
 
-[ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_4qocw"]
+[ext_resource type="Script" uid="uid://bnbm4weayr4yo" path="res://scripts/treadmill.gd" id="1_4qocw"]
+[ext_resource type="Texture2D" uid="uid://cg4gx6km6cs2e" path="res://assets/Sprites/circle.png" id="2_bgtwv"]
+[ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="3_t6w8w"]
 
-[node name="Treadmill" type="Node2D" unique_id=174819915]
+[sub_resource type="Curve2D" id="Curve2D_p78m7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 122, 93, 0, 0, 0, 0, 184, 70, 0, 0, 0, 0, 174, 41)
+}
+point_count = 3
 
-[node name="TemPexercise" type="Sprite2D" parent="." unique_id=1303355258]
-position = Vector2(299, 54)
-texture = ExtResource("1_4qocw")
-offset = Vector2(-171, 18)
+[sub_resource type="Curve2D" id="Curve2D_y7s2j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 94, 120, 0, 0, 0, 0, 168, 115, 0, 0, 0, 0, 180, 55)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_kvgmg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 178, 109, 0, 0, 0, 0, 171, 45, 0, 0, 0, 0, 226, 53)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_32xfs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 80, 110, 0, 0, 0, 0, 170, 38, 0, 0, 0, 0, 186, 121)
+}
+point_count = 3
+
+[node name="Treadmill" type="Node2D" unique_id=815005286]
+script = ExtResource("1_4qocw")
+
+[node name="Paths" type="Node2D" parent="." unique_id=1683773954]
+
+[node name="Path2D" type="Path2D" parent="Paths" unique_id=919508422]
+curve = SubResource("Curve2D_p78m7")
+
+[node name="Path2D2" type="Path2D" parent="Paths" unique_id=225598423]
+curve = SubResource("Curve2D_y7s2j")
+
+[node name="Path2D3" type="Path2D" parent="Paths" unique_id=199152217]
+curve = SubResource("Curve2D_kvgmg")
+
+[node name="Path2D4" type="Path2D" parent="Paths" unique_id=973078786]
+curve = SubResource("Curve2D_32xfs")
+
+[node name="Character" type="PathFollow2D" parent="." unique_id=295244528]
+
+[node name="Sprite2D" type="Sprite2D" parent="Character" unique_id=656795947]
+z_index = 3
+texture = ExtResource("2_bgtwv")
+
+[node name="TemPexercise" type="Sprite2D" parent="." unique_id=1496424269]
+position = Vector2(128, 72)
+texture = ExtResource("3_t6w8w")
+metadata/_edit_lock_ = true

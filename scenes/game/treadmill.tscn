@@ -35,6 +35,7 @@ radius = 13.0
 
 [node name="Treadmill" type="Node2D" unique_id=815005286]
 script = ExtResource("1_4qocw")
+speed = 50.0
 
 [node name="Paths" type="Node2D" parent="." unique_id=1683773954]
 script = ExtResource("2_y7s2j")
@@ -71,3 +72,7 @@ z_index = -2
 position = Vector2(128, 72)
 texture = ExtResource("3_t6w8w")
 metadata/_edit_lock_ = true
+
+[connection signal="input_event" from="Character/Area2D" to="." method="OnClick"]
+[connection signal="mouse_entered" from="Character/Area2D" to="." method="mouseEntered"]
+[connection signal="mouse_exited" from="Character/Area2D" to="." method="mouseExited"]

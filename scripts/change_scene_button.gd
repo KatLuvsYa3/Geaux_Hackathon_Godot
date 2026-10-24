@@ -5,5 +5,5 @@ extends BaseButton
 
 func _on_pressed() -> void:
 	get_tree().change_scene_to_file(scene)
-	BaseScript.current_minigame = minigame
+	BaseScript.start_minigame(minigame)
 	BaseScript.audio_controller.play_sound_from_tag("button")

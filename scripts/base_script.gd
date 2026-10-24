@@ -64,6 +64,12 @@ func do_task(en_req: int) -> bool:
 	energy-=en_req
 	return true
 
+func start_minigame(game: Minigames):
+	match(game):
+		Minigames.CULTURE:
+			$Arm/Arm.reset_pipette()
+	current_minigame = game
+
 func research_task_completed(percentage: float, max_score: int):
 	research_value += percentage*max_score
 

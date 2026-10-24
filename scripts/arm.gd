@@ -8,6 +8,10 @@ func _ready() -> void:
 	clicked_arm = get_parent().get_children()[1]
 	pipe_arm = get_parent().get_children()[2]
 
+func reset_pipette():
+	print("reset")
+	pipe_arm.get_child(2).value = 100
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	position = get_global_mouse_position()

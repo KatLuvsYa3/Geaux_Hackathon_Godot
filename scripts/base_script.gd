@@ -1,5 +1,24 @@
 extends Node
 
+#use these enums with "match" keyword 
+enum Minigames{
+	TREADMILL,     #0, 1, 2, 3, etc..
+	WEIGHTLIFTING,
+	CULTURE,
+	SCANNING,
+	CATASTROPHE,
+	MAINTANENCE
+}
+
+
+enum GameState {
+	START,
+	GAMEOVER,
+	MINIGAME,
+	IDLE
+}
+
+
 @export var base_energy = 6
 @export var energy = base_energy
 

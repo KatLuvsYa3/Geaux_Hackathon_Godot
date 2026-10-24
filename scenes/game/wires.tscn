@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://mdocc4qxyqoh"]
+
+[ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_8erlg"]
+
+[node name="Wire" type="Node2D" unique_id=974812941]
+
+[node name="TemPexercise" type="Sprite2D" parent="." unique_id=1995177351]
+position = Vector2(128, 72)
+texture = ExtResource("1_8erlg")

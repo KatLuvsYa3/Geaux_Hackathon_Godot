@@ -64,14 +64,13 @@ func end_game():
 func change_energy(x):
 	energy = x
 	display.get_child(0).value = energy
-	
-func change_year(x):
-	year = x
-	display.get_child(0).text = year.to_string()
 
 func new_year() -> void:
 	year+=1
-	if year > final_year: end_game()
+	display.get_child(3).text = str(year)
+	if year > final_year: 
+		display.queue_free()
+		end_game()
 	bone_health -= decay_rate
 	cardio_health -= decay_rate
 	change_energy(base_energy)

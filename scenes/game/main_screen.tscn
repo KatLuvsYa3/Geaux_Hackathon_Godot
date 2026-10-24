@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cu7wgyju14jnj" path="res://assets/Sprites/main.png" id="1_w03e3"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_56jkj"]
+[ext_resource type="Script" uid="uid://yjpi0cm8ucna" path="res://scripts/end_year_button.gd" id="3_yiin6"]
 
 [node name="MainScreen" type="Node2D" unique_id=902538669]
 
@@ -34,6 +35,16 @@ offset_bottom = 113.0
 script = ExtResource("2_56jkj")
 scene = "res://scenes/game/research.tscn"
 
+[node name="EndYear" type="Button" parent="." unique_id=130643375]
+offset_left = 64.0
+offset_top = 121.0
+offset_right = 139.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 11
+text = "End Year?"
+script = ExtResource("3_yiin6")
+
 [connection signal="pressed" from="Exercise" to="Exercise" method="_on_pressed"]
 [connection signal="pressed" from="Maintainance" to="Maintainance" method="_on_pressed"]
 [connection signal="pressed" from="Research" to="Research" method="_on_pressed"]
+[connection signal="pressed" from="EndYear" to="EndYear" method="_on_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bruf17ea76vhy"]
 
 [ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_espd1"]
+[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_8e6wv"]
 
 [node name="Maintainance" type="Node2D" unique_id=2013533969]
 
@@ -14,3 +15,15 @@ offset_top = 30.0
 offset_right = 181.0
 offset_bottom = 48.0
 text = "Maintainance"
+
+[node name="Treadmill" type="Button" parent="." unique_id=1058060577]
+offset_left = 72.0
+offset_top = 91.0
+offset_right = 148.0
+offset_bottom = 119.0
+text = "Wires"
+script = ExtResource("2_8e6wv")
+scene = "res://scenes/game/wires.tscn"
+minigame = 5
+
+[connection signal="pressed" from="Treadmill" to="Treadmill" method="_on_pressed"]

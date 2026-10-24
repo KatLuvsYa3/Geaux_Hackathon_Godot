@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dc8q2u7hun27h"]
 
-[ext_resource type="AudioStream" uid="uid://bvmqdqjstmyft" path="res://audio_files/music_spoopy.mp3" id="1_qpnks"]
+[ext_resource type="AudioStream" uid="uid://cj8se5dnf58uq" path="res://audio_files/music_spacey.mp3" id="2_5dt40"]
 [ext_resource type="Script" uid="uid://bjcpivk642l37" path="res://scripts/audio_stream_player.gd" id="2_31uvl"]
 
 [node name="Audio Controller" type="Node2D" unique_id=310852743]
 script = ExtResource("2_31uvl")
 
 [node name="BGMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2106870763]
-stream = ExtResource("1_qpnks")
+stream = ExtResource("2_5dt40")
+volume_db = -6.0
 autoplay = true
 max_polyphony = 5
 parameters/looping = true

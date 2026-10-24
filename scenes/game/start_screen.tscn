@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://biuob5yhero6d" path="res://assets/Sprites/TEMPstartscreen.png" id="1_w03e3"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_00sk3"]
 [ext_resource type="Texture2D" uid="uid://clv1tfnad24x5" path="res://assets/Sprites/earth.png" id="3_wcyx1"]
-[ext_resource type="Script" uid="uid://d4r4b5frt8r1" path="res://scenes/game/earth.gd" id="4_6goes"]
+[ext_resource type="Script" uid="uid://d4r4b5frt8r1" path="res://scripts/earth.gd" id="4_6goes"]
 [ext_resource type="Texture2D" uid="uid://c1da1bwgr7mbx" path="res://assets/Sprites/iss.png" id="5_lnmkk"]
-[ext_resource type="Script" uid="uid://xq20yki5mcw2" path="res://scenes/game/iss.gd" id="6_vtsvc"]
+[ext_resource type="Script" uid="uid://xq20yki5mcw2" path="res://scripts/iss.gd" id="6_vtsvc"]
 
 [node name="StartScreen" type="Node2D" unique_id=755328666]
 

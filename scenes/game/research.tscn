@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://bfdumk3rk1ygp"]
 
+[ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_c2kjm"]
+
 [node name="Research" type="Node2D" unique_id=42553809]
+
+[node name="TemPexercise" type="Sprite2D" parent="." unique_id=297195884]
+position = Vector2(128, 72)
+texture = ExtResource("1_c2kjm")
+
+[node name="Label" type="Label" parent="TemPexercise" unique_id=2123500120]
+offset_left = -85.0
+offset_top = -43.0
+offset_right = 52.0
+offset_bottom = -25.0
+text = "Research"

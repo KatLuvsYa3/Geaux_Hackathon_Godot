@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://sq8nldyl6mfx" path="res://assets/Sprites/cultures/culture2.png" id="4_bra5j"]
 [ext_resource type="Texture2D" uid="uid://dshg72e7stsqy" path="res://assets/Sprites/cultures/culture3.png" id="5_qvadt"]
 [ext_resource type="Texture2D" uid="uid://m8u8elaxna2h" path="res://assets/Sprites/cultures/culture4.png" id="6_0rwfa"]
+[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="7_kkb52"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_04sky"]
+radius = 6.999962
+height = 116.00627
 
 [node name="Culture" type="Node2D" unique_id=1530017835]
 script = ExtResource("1_guctc")
@@ -34,3 +39,29 @@ texture = ExtResource("5_qvadt")
 visible = false
 position = Vector2(128, 72)
 texture = ExtResource("6_0rwfa")
+
+[node name="Petri" type="Area2D" parent="." unique_id=779374893]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Petri" unique_id=1618572178]
+position = Vector2(119.99999, 91)
+rotation = -1.5673146
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_04sky")
+
+[node name="BackToMain" type="Button" parent="." unique_id=1674638703]
+offset_left = 155.0
+offset_top = 119.0
+offset_right = 251.0
+offset_bottom = 145.0
+text = "Finished?"
+script = ExtResource("7_kkb52")
+
+[node name="Label" type="Label" parent="." unique_id=402331349]
+offset_left = 7.0
+offset_top = 19.0
+offset_right = 183.0
+offset_bottom = 37.0
+text = "If putting enough"
+
+[connection signal="area_entered" from="Petri" to="." method="_on_petri_area_entered"]
+[connection signal="pressed" from="BackToMain" to="BackToMain" method="_on_pressed"]

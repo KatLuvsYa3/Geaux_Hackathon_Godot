@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://crg5dujb8j18x"]
+
+[ext_resource type="Script" uid="uid://c5ogd1ik32oee" path="res://scripts/arm.gd" id="1_muf2m"]
+[ext_resource type="Texture2D" uid="uid://crt0c6iufjvgb" path="res://assets/Sprites/arm.png" id="2_dy6di"]
+[ext_resource type="Texture2D" uid="uid://dhxpjefr3ymju" path="res://assets/Sprites/clickedarm.png" id="3_dy6di"]
+[ext_resource type="Texture2D" uid="uid://dtvo7508xxfi5" path="res://assets/Sprites/pipettearm.png" id="4_3j5xu"]
+[ext_resource type="Script" uid="uid://cag76t8uvxvds" path="res://scripts/pipettearm.gd" id="5_mg0tv"]
+[ext_resource type="Texture2D" uid="uid://btb8mn2wda874" path="res://assets/Sprites/pipeslider.png" id="6_o1qxq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0i5l"]
+radius = 6.0
+
+[node name="Arm" type="Node2D" unique_id=1142549423]
+
+[node name="Arm" type="Sprite2D" parent="." unique_id=418069819]
+z_index = 20
+texture = ExtResource("2_dy6di")
+offset = Vector2(26, 28)
+script = ExtResource("1_muf2m")
+
+[node name="ClickedArm" type="Sprite2D" parent="." unique_id=1984569383]
+visible = false
+z_index = 20
+texture = ExtResource("3_dy6di")
+offset = Vector2(26, 28)
+
+[node name="Pipettearm" type="Sprite2D" parent="." unique_id=336977008]
+z_index = 20
+texture = ExtResource("4_3j5xu")
+offset = Vector2(20, 30)
+script = ExtResource("5_mg0tv")
+
+[node name="TipArea" type="Area2D" parent="Pipettearm" unique_id=2079155400]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipettearm/TipArea" unique_id=1804710575]
+position = Vector2(-17, 21)
+shape = SubResource("CircleShape2D_m0i5l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pipettearm" unique_id=2047961181]
+
+[node name="Pipeslider" type="ReferenceRect" parent="Pipettearm" unique_id=550905199]
+clip_children = 1
+offset_left = -22.0
+offset_top = 14.999999
+offset_right = 0.92505646
+offset_bottom = 32.0
+rotation = -0.66378516
+
+[node name="graphicbar" type="Sprite2D" parent="Pipettearm/Pipeslider" unique_id=588396314]
+z_index = -1
+position = Vector2(23.840422, 37.6913)
+rotation = 0.66378516
+texture = ExtResource("6_o1qxq")

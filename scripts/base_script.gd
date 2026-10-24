@@ -19,6 +19,8 @@ enum GameState {
 	IDLE
 }
 
+@export var viewport_height = 144
+@export var viewport_width = 256
 
 @export var base_energy = 6
 @export var energy = base_energy
@@ -72,6 +74,11 @@ func cardio_task_completed(percentage: float, max_score: int):
 func bone_task_completed(percentage: float, max_score: int):
 	bone_health += percentage*max_score
 	if bone_health > 1.0: cardio_health = 1.0
+
+func out_of_bounds(pos: Vector2) -> bool:
+	if pos.y > viewport_height or pos.y < 0: return true
+	if pos.x > viewport_width or pos.x < 0: return true
+	return false
 
 ## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:

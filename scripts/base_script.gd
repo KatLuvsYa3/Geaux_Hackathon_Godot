@@ -7,7 +7,8 @@ enum Minigames{
 	CULTURE,
 	SCANNING,
 	CATASTROPHE,
-	MAINTANENCE
+	MAINTANENCE,
+	NOT_IN
 }
 
 
@@ -32,6 +33,7 @@ enum GameState {
 
 @export var year = 1
 @export var final_year = 3
+@export var current_minigame = Minigames.NOT_IN
 
 var audio_controller_scene = preload("res://scenes/audio_controller.tscn").instantiate()
 @export var audio_controller = null

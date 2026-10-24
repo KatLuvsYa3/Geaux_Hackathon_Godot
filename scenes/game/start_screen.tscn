@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cwwro3dvc0b0r"]
 
+[ext_resource type="Script" uid="uid://due3jaoxcv58l" path="res://scripts/start_screen.gd" id="1_52urt"]
 [ext_resource type="Texture2D" uid="uid://biuob5yhero6d" path="res://assets/Sprites/TEMPstartscreen.png" id="1_w03e3"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_00sk3"]
 [ext_resource type="Texture2D" uid="uid://clv1tfnad24x5" path="res://assets/Sprites/earth.png" id="3_wcyx1"]
@@ -8,6 +9,7 @@
 [ext_resource type="Script" uid="uid://xq20yki5mcw2" path="res://scripts/iss.gd" id="6_vtsvc"]
 
 [node name="StartScreen" type="Node2D" unique_id=755328666]
+script = ExtResource("1_52urt")
 
 [node name="TemPstartscreen" type="Sprite2D" parent="." unique_id=1588257559]
 position = Vector2(128, 72)
@@ -40,4 +42,5 @@ offset_bottom = 36.0
 theme_override_font_sizes/font_size = 20
 text = "GAME TITLE"
 
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

@@ -51,8 +51,12 @@ func _ready():
 	audio_controller = get_child(0)
 	add_child(arm_scene)
 	arm = get_child(1)
+
+func add_display():
 	add_child(display_scene)
 	display = get_child(2)
+	display.get_child(0).max_value = base_energy
+	display.get_child(0).value = base_energy
 
 func end_game():
 	get_tree().change_scene_to_file("res://scenes/game/end_scene.tscn")
@@ -60,14 +64,13 @@ func end_game():
 func change_energy(x):
 	energy = x
 	display.get_child(0).value = energy
-	
-func change_year(x):
-	year = x
-	display.get_child(0).text = year.to_string()
 
 func new_year() -> void:
 	year+=1
-	if year > final_year: end_game()
+	display.get_child(3).text = str(year)
+	if year > final_year: 
+		display.queue_free()
+		end_game()
 	bone_health -= decay_rate
 	cardio_health -= decay_rate
 	change_energy(base_energy)

@@ -17,3 +17,4 @@ offset_bottom = 119.0
 text = "Treadmill"
 script = ExtResource("2_lrd20")
 scene = "res://scenes/game/treadmill.tscn"
+minigame = 0

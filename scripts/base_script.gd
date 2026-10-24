@@ -51,6 +51,8 @@ func _ready():
 	audio_controller = get_child(0)
 	add_child(arm_scene)
 	arm = get_child(1)
+
+func add_display():
 	add_child(display_scene)
 	display = get_child(2)
 	display.get_child(0).max_value = base_energy

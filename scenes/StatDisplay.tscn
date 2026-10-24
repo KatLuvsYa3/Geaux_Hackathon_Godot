@@ -56,3 +56,21 @@ z_index = -1
 position = Vector2(68.99999, 18)
 scale = Vector2(2.0625, 0.75)
 texture = ExtResource("3_6xqme")
+
+[node name="Timer" type="Label" parent="." unique_id=1962481652]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 14.0
+offset_right = 261.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 10
+text = "2:30"
+
+[node name="Time Left" type="Label" parent="." unique_id=977710715]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 16.0
+offset_right = 230.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 8
+text = "Time Left:"

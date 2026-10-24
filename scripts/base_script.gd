@@ -34,6 +34,9 @@ enum GameState {
 @export var research_value = 0
 @export var final_research_value = 10
 
+# in seconds
+@export var initial_time = 120
+@export var timer = 0
 @export var year = 1
 @export var final_year = 3
 @export var current_minigame = Minigames.NOT_IN
@@ -63,6 +66,7 @@ func add_display():
 	display = get_child(3)
 	display.get_child(0).max_value = base_energy
 	display.get_child(0).value = base_energy
+	timer = initial_time
 
 func end_game():
 	get_tree().change_scene_to_file("res://scenes/game/end_scene.tscn")
@@ -129,7 +133,14 @@ func out_of_bounds(pos: Vector2) -> bool:
 #func _ready() -> void:
 	#pass # Replace with function body.
 #
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+
+func sec_to_string(x) -> String:
+	return str((int)(x/60))+":"+str(((int)(x))%60)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if display:
+		timer-=delta
+		display.get_child(5).text = sec_to_string(timer)
+		if timer < 0:
+			end_game()

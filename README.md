@@ -1,7 +1,7 @@
-# HACKATHON PROJECT
-Our project is a game that teaches the players the various tasks that someone on the ISS will have to perform in order to come back to Earth safely and with useful data.\
+# ISS SURVIVAL
+Our project is a game that teaches the players the various tasks that someone on the ISS will have to perform in order to come back to Earth safely and with useful data.
 
-It is based on a short gameplay loop of exercising and performing research minigames at the cost of energy, with occasional maintence events that will disable a minigame until fixed.\
+It is based on a short gameplay loop of exercising and performing research minigames at the cost of energy, with occasional maintence events that will disable a minigame until fixed.
 
 ## Team
 Kat Calcagno, Brett Core
@@ -13,14 +13,14 @@ Some of the things it teaches is how important it is to exercise in space so you
 \
 To do this, we made it so the player gets various endings after a few years in space when they return to Earth.  If they didn't exercise at all, they will experience a variety of sideeffects, and if they didn't research they would get in trouble with their space agency.\
 \
-No external APIs or AI generated code was used. (any ai used was an advanced search for godot documentation)\
-#prereqs
+No external APIs or AI generated code was used. (any ai used was an advanced search for godot documentation)
+# Prerequisites 
 Currently any system that can run Godot can be used, Windows is perferred and Linux has been show to produce minor errors\
 \
 Latest version of the Godot engine (https://godotengine.org/download/windows/)\
-Access to git/github, perferably the desktop version of github.\
-\
-#how to build from source
+Access to git/github, perferably the desktop version of github.
+
+# How to Build from Source
 Pulling the Repo:\
 	\
 	Option 1 (github desktop app):\

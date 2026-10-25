@@ -46,15 +46,20 @@ var arm_scene = preload("res://scenes/arm.tscn").instantiate()
 var display_scene = preload("res://scenes/StatDisplay.tscn").instantiate()
 @export var display = null
 
+var fade_scene = preload("res://scenes/transition.tscn").instantiate()
+@export var fade = null
+
 func _ready():
 	add_child(audio_controller_scene)
 	audio_controller = get_child(0)
 	add_child(arm_scene)
 	arm = get_child(1)
+	add_child(fade_scene)
+	fade = get_child(2)
 
 func add_display():
 	add_child(display_scene)
-	display = get_child(2)
+	display = get_child(3)
 	display.get_child(0).max_value = base_energy
 	display.get_child(0).value = base_energy
 
@@ -64,6 +69,9 @@ func end_game():
 func change_energy(x):
 	energy = x
 	display.get_child(0).value = energy
+
+func fade_change():
+	fade.play()
 
 func new_year() -> void:
 	year+=1

@@ -20,6 +20,8 @@ enum GameState {
 	IDLE
 }
 
+@export var timer_enabled: bool = false
+
 @export var viewport_height = 144
 @export var viewport_width = 256
 
@@ -35,7 +37,7 @@ enum GameState {
 @export var final_research_value = 10
 
 # in seconds
-@export var initial_time = 90
+@export var year_time = 90
 @export var timer = 0
 @export var year = 1
 @export var final_year = 3
@@ -64,9 +66,12 @@ func _ready():
 func add_display():
 	add_child(display_scene)
 	display = get_child(3)
+	if !timer_enabled: 
+		display.get_child(5).visible = false
+		display.get_child(6).visible = false
 	display.get_child(0).max_value = base_energy
 	display.get_child(0).value = base_energy
-	timer = initial_time
+	timer = year_time
 
 func end_game():
 	get_tree().change_scene_to_file("res://scenes/game/end_scene.tscn")
@@ -96,6 +101,7 @@ func new_year() -> void:
 	cardio_health -= decay_rate
 	broken_mingames.append(random_minigame())
 	change_energy(base_energy)
+	timer = year_time
 
 func do_task(en_req: int) -> bool:
 	if en_req > energy: return false
@@ -154,9 +160,11 @@ func sec_to_string(x) -> String:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if display:
+	if display and timer_enabled:
 		timer-=delta
 		display.get_child(5).text = sec_to_string(timer)
 		if timer < 0:
-			skip_to_final_year()
-			end_game()
+			get_tree().change_scene_to_file("res://scenes/game/next_year.tscn")
+			BaseScript.start_minigame(Minigames.NOT_IN)
+			BaseScript.fade_change()
+			new_year()

@@ -21,6 +21,7 @@ func _ready() -> void:
 
 func _on_petri_area_entered(area: Area2D) -> void:
 	if area.name == "Drip":
+		BaseScript.audio_controller.play_sound_from_tag("drip")
 		drop_count+=1
 		area.queue_free()
 		match drop_count:

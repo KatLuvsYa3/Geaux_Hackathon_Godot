@@ -4,6 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Percentage.text = str(BaseScript.cardio_health*100)+"%"
+	BaseScript.audio_controller.play_sound_from_tag("med_beeps")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

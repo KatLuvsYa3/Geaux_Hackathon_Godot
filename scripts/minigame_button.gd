@@ -10,3 +10,5 @@ func _on_pressed() -> void:
 		BaseScript.start_minigame(minigame)
 		BaseScript.audio_controller.play_sound_from_tag("button")
 		BaseScript.fade_change()
+	else:
+		BaseScript.audio_controller.play_sound_from_tag("error")

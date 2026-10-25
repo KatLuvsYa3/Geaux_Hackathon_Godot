@@ -24,10 +24,10 @@ Access to git/github, perferably the desktop version of github.
 Pulling the Repo:\
 	\
 	Option 1 (github desktop app):\
-		Simply press the pull origin button after linking the repo from https://github.com/KatLuvsYa3/Geaux_Hackathon_Godot\
+		- `Simply press the pull origin button after linking the repo from https://github.com/KatLuvsYa3/Geaux_Hackathon_Godot\`
 \
 	Option 2 (commandline git):\
-		git clone https://github.com/KatLuvsYa3/Geaux_Hackathon_Godot && cd project\
+		- `git clone https://github.com/KatLuvsYa3/Geaux_Hackathon_Godot && cd project\`
 \
 Open the new project on Godot to edit and debug it.\
 To build the project, open the project in the Godot Editor and find the Taskbar at the top of the screen. Navigate to `Editor->Manage Export Templates` and dowload the desired target export template. Finally, navigate to `Project->Export`, pick your preset, and then click `Export Project`.

@@ -16,6 +16,7 @@ var acceleration: float = 0
 
 var radius = 13
 var on_point = false
+var timer = 0
 
 func _ready():
 	var random_path = paths.pick_random()
@@ -27,6 +28,11 @@ func _ready():
 			tracksObject.create_track(path)
 
 func _process(delta):
+	timer+=delta
+	if ((int)(timer))%2==0:
+		$Exerrun2.visible = true
+	else:
+		$Exerrun2.visible = false
 	
 	# checking mouse
 	if character.global_position.distance_to(get_global_mouse_position()) <= radius:

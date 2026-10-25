@@ -1,33 +1,61 @@
 [gd_scene format=3 uid="uid://fnjst8wgfd08"]
 
-[ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_01x61"]
+[ext_resource type="Script" uid="uid://bbjqs1ftlg8cf" path="res://scripts/exercise.gd" id="1_pidl0"]
 [ext_resource type="Script" uid="uid://bidfl3lx6mwrm" path="res://scripts/minigame_button.gd" id="2_lrd20"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="3_p4sgm"]
+[ext_resource type="Script" uid="uid://wqjtli0ioe64" path="res://scenes/game/broken_thing_part_exer.gd" id="5_7xylt"]
+[ext_resource type="Texture2D" uid="uid://bhe5exqc6phlv" path="res://assets/Sprites/exer.png" id="5_imlhv"]
 
 [node name="Exercise" type="Node2D" unique_id=532019883]
+script = ExtResource("1_pidl0")
 
-[node name="TemPexercise" type="Sprite2D" parent="." unique_id=264741244]
-position = Vector2(128, 72)
-texture = ExtResource("1_01x61")
-
-[node name="Treadmill" type="Button" parent="." unique_id=1229603206]
-offset_left = 72.0
-offset_top = 91.0
-offset_right = 148.0
-offset_bottom = 119.0
-text = "Treadmill"
+[node name="Treadmill" type="TextureButton" parent="." unique_id=403424611]
+offset_left = 61.0
+offset_top = 50.0
+offset_right = 187.0
+offset_bottom = 141.0
 script = ExtResource("2_lrd20")
 scene = "res://scenes/game/treadmill.tscn"
 minigame = 0
-energy_required = 1
 
 [node name="Back" type="Button" parent="." unique_id=921325450]
-offset_left = 7.0
-offset_top = 115.0
-offset_right = 64.0
-offset_bottom = 141.0
+offset_left = 195.0
+offset_top = 96.0
+offset_right = 252.0
+offset_bottom = 122.0
 text = "Back"
 script = ExtResource("3_p4sgm")
 
+[node name="BrokenThingPart" type="CPUParticles2D" parent="." unique_id=477816029]
+position = Vector2(118, 116)
+emitting = false
+amount = 16
+lifetime = 0.7
+explosiveness = 0.6
+randomness = 0.78
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.21
+spread = 180.0
+initial_velocity_min = 40.0
+initial_velocity_max = 232.0
+angular_velocity_min = -51.84
+angular_velocity_max = -51.84
+linear_accel_min = 23.2
+linear_accel_max = 23.2
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.98, 0.9097666, 0.13719998, 1)
+hue_variation_min = -0.42
+hue_variation_max = 0.24
+script = ExtResource("5_7xylt")
+
+[node name="Exer" type="Sprite2D" parent="." unique_id=196367765]
+z_index = -1
+position = Vector2(128, 72)
+texture = ExtResource("5_imlhv")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Treadmill" to="." method="_on_treadmill_pressed"]
 [connection signal="pressed" from="Treadmill" to="Treadmill" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

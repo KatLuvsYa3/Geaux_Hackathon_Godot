@@ -5,9 +5,10 @@ extends Node2D
 @onready var character = $Character
 @onready var baseScript = $/root/BaseScript
 var minigameStart: bool = false
-
+var loopCount = 0
 var movementCount = 0
-
+var last_ratio = 0
+var current_ratio = 0
 
 @export var speed: float = 1.0
 var acceleration: float = 0
@@ -22,32 +23,32 @@ func _ready():
 			tracksObject.create_track(path)
 
 func _process(delta):
+	
+	if !minigameStart:
+		return
+	
+	current_ratio = character.progress_ratio
+	
 	if movementCount % 50 == 0:
-		acceleration += randi_range(-2,2)
-		print(randi_range(-2,2))
+		acceleration += .1
 		if acceleration > 5:
 			acceleration = 5
-		if acceleration < -5:
-			acceleration = -5
 		
 		speed += acceleration
 		
 		if speed > 100:
 			speed = 100
-		if speed < 15:
-			speed = 15
-		
-		print("Speed: ", speed)
-		print("Acceleration: ", acceleration)
-	
-
 	
 	movementCount += 1
+	character.progress += speed * delta
 	
-	
-	
-	if minigameStart:
-		character.progress += speed * delta
+	if current_ratio < last_ratio:
+		loopCount += 1
+		if loopCount == 3:
+			minigameStart = false
+			#change text as needed
+		
+	last_ratio = current_ratio
 
 
 func mouseEntered() -> void:
@@ -58,17 +59,24 @@ func mouseExited() -> void:
 	print("Mouse Exited")
 	if minigameStart:
 		minigameStart = false
-		baseScript.cardio_task_completed(character.progress_ratio, 10)
-		
+	
+	
+	#Set text to try agaub or something
 
 
 func OnClick(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			minigameStart = true
+			if movementCount == 0:
+				minigameStart = true
+			return
 
 # PUT RESULT OF GAME HERE
 # IE ENERGY SPENT AND ADDING SCORE TO BASE.CARDIO
 func _on_back_to_main_pressed() -> void:
+<<<<<<< Updated upstream
 	#CODE HERE
 	$BackToMain._on_pressed() #keep to stop signal race
+=======
+	baseScript.cardio_task_completed((1/3) * loopCount, 10)
+>>>>>>> Stashed changes

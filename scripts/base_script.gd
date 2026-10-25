@@ -116,7 +116,7 @@ func research_task_completed(percentage: float, max_score: int):
 	research_value += percentage*max_score
 
 func cardio_task_completed(percentage: float, max_score: int):
-	cardio_health += percentage*max_score
+	cardio_health += percentage*max_score*0.01
 	if cardio_health > 1.0: cardio_health = 1.0
 
 func bone_task_completed(percentage: float, max_score: int):

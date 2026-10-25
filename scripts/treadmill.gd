@@ -75,6 +75,8 @@ func OnClick(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 # IE ENERGY SPENT AND ADDING SCORE TO BASE.CARDIO
 func _on_back_to_main_pressed() -> void:
 
+
 	$BackToMain._on_pressed() #keep to stop signal race
 	baseScript.cardio_task_completed((1/3) * loopCount, 10)
 	baseScript.change_energy(-1)
+

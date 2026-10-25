@@ -110,7 +110,6 @@ func do_task(en_req: int) -> bool:
 
 func maintainance_task_completed():
 	broken_mingames.pop_front()
-	print(broken_mingames)
 
 func start_minigame(game: Minigames):
 	match(game):

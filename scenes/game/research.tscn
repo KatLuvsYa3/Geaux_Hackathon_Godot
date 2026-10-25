@@ -1,50 +1,50 @@
 [gd_scene format=3 uid="uid://bfdumk3rk1ygp"]
 
-[ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_c2kjm"]
 [ext_resource type="Script" uid="uid://bidfl3lx6mwrm" path="res://scripts/minigame_button.gd" id="2_77c6a"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="3_m3q3p"]
+[ext_resource type="Texture2D" uid="uid://do7l4wylio0qj" path="res://assets/Sprites/researchchoose.png" id="4_vgjrp"]
 
 [node name="Research" type="Node2D" unique_id=42553809]
 
-[node name="TemPexercise" type="Sprite2D" parent="." unique_id=297195884]
-position = Vector2(128, 72)
-texture = ExtResource("1_c2kjm")
-
-[node name="Label" type="Label" parent="TemPexercise" unique_id=2123500120]
-offset_left = -85.0
-offset_top = -43.0
-offset_right = 52.0
-offset_bottom = -25.0
-text = "Medbay"
-
-[node name="Culture" type="Button" parent="." unique_id=1282042765]
-offset_left = 12.0
-offset_top = 81.0
+[node name="Culture" type="TextureButton" parent="." unique_id=1678510365]
+offset_left = 13.0
+offset_top = 68.0
 offset_right = 94.0
 offset_bottom = 107.0
-text = "Culture"
 script = ExtResource("2_77c6a")
 scene = "res://scenes/game/culture.tscn"
 minigame = 2
 
-[node name="Checkup" type="Button" parent="." unique_id=1618481827]
-offset_left = 130.0
-offset_top = 82.0
-offset_right = 227.0
-offset_bottom = 108.0
-text = "Check UP"
+[node name="Checkup" type="TextureButton" parent="." unique_id=1725763458]
+offset_left = 113.0
+offset_top = 47.0
+offset_right = 230.0
+offset_bottom = 115.0
 script = ExtResource("2_77c6a")
 scene = "res://scenes/game/checkup.tscn"
 minigame = 3
 energy_required = 1
 
 [node name="Back" type="Button" parent="." unique_id=1816536889]
-offset_left = 83.0
-offset_top = 115.0
-offset_right = 140.0
-offset_bottom = 141.0
+offset_left = 97.0
+offset_top = 119.0
+offset_right = 154.0
+offset_bottom = 145.0
 text = "Back"
 script = ExtResource("3_m3q3p")
+
+[node name="Researchchoose" type="Sprite2D" parent="." unique_id=986537855]
+z_index = -1
+position = Vector2(128, 72)
+texture = ExtResource("4_vgjrp")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="." unique_id=2145441810]
+offset_left = 56.0
+offset_top = 25.0
+offset_right = 173.0
+offset_bottom = 43.0
+text = "Pick a task!"
 
 [connection signal="pressed" from="Culture" to="Culture" method="_on_pressed"]
 [connection signal="pressed" from="Checkup" to="Checkup" method="_on_pressed"]

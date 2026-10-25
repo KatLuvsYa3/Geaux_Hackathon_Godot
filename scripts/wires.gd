@@ -5,6 +5,9 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 
+func _process(delta: float) -> void:
+	if $Cuts.filled==$Cuts.total: $FixedText.text = "Fixed!"
+
 func _on_finish_pressed() -> void:
 	var percentage = $Cuts.filled/$Cuts.total
 	if percentage == 1: BaseScript.maintainance_task_completed()

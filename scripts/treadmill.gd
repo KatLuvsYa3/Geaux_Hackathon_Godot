@@ -97,6 +97,6 @@ func mouseExited() -> void:
 # PUT RESULT OF GAME HERE
 # IE ENERGY SPENT AND ADDING SCORE TO BASE.CARDIO
 func _on_back_to_main_pressed() -> void:
-	baseScript.cardio_task_completed((1/3) * loopCount, 10)
-	BaseScript.do_task(1)
+	baseScript.cardio_task_completed(loopCount/3.0, 15)
+	BaseScript.do_task(2)
 	$BackToMain._on_pressed() #keep to stop signal race

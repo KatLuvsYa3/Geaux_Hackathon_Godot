@@ -13,6 +13,9 @@ var current_ratio = 0
 @export var speed: float = 1.0
 var acceleration: float = 0
 
+var radius = 13
+var on_point = false
+
 func _ready():
 	var random_path = paths.pick_random()
 	character.reparent(random_path)
@@ -24,9 +27,28 @@ func _ready():
 
 func _process(delta):
 	
+	# checking mouse
+	if character.global_position.distance_to(get_global_mouse_position()) <= radius:
+		# MOUSE_CLICKED
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			if movementCount == 0:
+				minigameStart = true
+		if !on_point:
+			on_point = true
+			# MOUSE_ENTERED
+			mouseEntered()
+	else:
+		# MOUSE_EXITED
+		if on_point:
+			on_point = false
+		if minigameStart:
+			mouseExited()
+	
+	#exit move if not active
 	if !minigameStart:
 		return
 	
+	#move thing
 	current_ratio = character.progress_ratio
 	
 	if movementCount % 50 == 0:
@@ -49,6 +71,7 @@ func _process(delta):
 			#change text as needed
 		
 	last_ratio = current_ratio
+	
 
 
 func mouseEntered() -> void:
@@ -63,19 +86,17 @@ func mouseExited() -> void:
 	
 	#Set text to try agaub or something
 
-
-func OnClick(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			if movementCount == 0:
-				minigameStart = true
-			return
+#
+#func OnClick(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#if movementCount == 0:
+				#minigameStart = true
+			#return
 
 # PUT RESULT OF GAME HERE
 # IE ENERGY SPENT AND ADDING SCORE TO BASE.CARDIO
 func _on_back_to_main_pressed() -> void:
-
-
 	$BackToMain._on_pressed() #keep to stop signal race
 	baseScript.cardio_task_completed((1/3) * loopCount, 10)
 	baseScript.change_energy(-1)

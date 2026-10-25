@@ -40,6 +40,7 @@ radius = 13.0
 font = ExtResource("8_qicne")
 
 [node name="Treadmill" type="Node2D" unique_id=815005286]
+process_mode = 3
 script = ExtResource("1_4qocw")
 speed = 50.0
 
@@ -104,7 +105,4 @@ offset_right = -9.0
 offset_bottom = 63.0
 label_settings = SubResource("LabelSettings_32xfs")
 
-[connection signal="input_event" from="Character/Area2D" to="." method="OnClick"]
-[connection signal="mouse_entered" from="Character/Area2D" to="." method="mouseEntered"]
-[connection signal="mouse_exited" from="Character/Area2D" to="." method="mouseExited"]
 [connection signal="pressed" from="BackToMain" to="." method="_on_back_to_main_pressed"]

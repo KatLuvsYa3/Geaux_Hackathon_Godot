@@ -9,3 +9,4 @@ func _on_finish_pressed() -> void:
 	var percentage = $Cuts.filled/$Cuts.total
 	if percentage == 1: BaseScript.maintainance_task_completed()
 	BaseScript.do_task(2)
+	$Finish._on_pressed()

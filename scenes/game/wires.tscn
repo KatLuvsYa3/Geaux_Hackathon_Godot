@@ -97,4 +97,3 @@ text = "Finished?"
 script = ExtResource("5_wpmw1")
 
 [connection signal="pressed" from="Finish" to="." method="_on_finish_pressed"]
-[connection signal="pressed" from="Finish" to="Finish" method="_on_pressed"]

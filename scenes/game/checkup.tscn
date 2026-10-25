@@ -39,4 +39,3 @@ text = "Finished?"
 script = ExtResource("3_rrnpn")
 
 [connection signal="pressed" from="Finish" to="." method="_on_finish_pressed"]
-[connection signal="pressed" from="Finish" to="Finish" method="_on_pressed"]

@@ -35,3 +35,4 @@ func _on_back_to_main_pressed() -> void:
 	var percentage = 1.0-0.5*abs(right_drop_amount-drop_count)
 	BaseScript.research_task_completed(percentage, 3)
 	BaseScript.do_task(2)
+	$BackToMain._on_pressed()

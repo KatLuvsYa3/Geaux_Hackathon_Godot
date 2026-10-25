@@ -13,3 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_finish_pressed() -> void:
 	BaseScript.do_task(1)
+	$Finish._on_pressed()

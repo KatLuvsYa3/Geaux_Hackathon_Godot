@@ -70,4 +70,5 @@ func OnClick(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 # PUT RESULT OF GAME HERE
 # IE ENERGY SPENT AND ADDING SCORE TO BASE.CARDIO
 func _on_back_to_main_pressed() -> void:
-	pass # Replace with function body.
+	#CODE HERE
+	$BackToMain._on_pressed() #keep to stop signal race

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var track_width: float = 24.0
-@export var track_color: Color = Color(0.85, 0.85, 0.9)
+@export var track_color: Color = Color(0.85, 0.85, 0.9, 0.3)
 
 
 func create_track(path: Path2D):

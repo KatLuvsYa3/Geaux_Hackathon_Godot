@@ -35,12 +35,12 @@ texture = ExtResource("5_lnmkk")
 script = ExtResource("6_vtsvc")
 
 [node name="Label" type="Label" parent="." unique_id=125996640]
-offset_left = 102.0
-offset_top = 14.0
-offset_right = 228.0
-offset_bottom = 36.0
+offset_left = 98.0
+offset_top = 10.0
+offset_right = 247.0
+offset_bottom = 32.0
 theme_override_font_sizes/font_size = 20
-text = "GAME TITLE"
+text = "ISS SURVIVAL"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

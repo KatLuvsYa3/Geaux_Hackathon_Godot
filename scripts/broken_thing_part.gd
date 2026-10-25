@@ -1,10 +1,6 @@
 extends CPUParticles2D
 
-func repair():
-	emitting = false
-
 func set_broken(mini):
-	print("hit")
 	emitting = true
 	match mini:
 		BaseScript.Minigames.TREADMILL:

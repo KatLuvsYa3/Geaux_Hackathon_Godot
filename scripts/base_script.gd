@@ -132,8 +132,24 @@ func out_of_bounds(pos: Vector2) -> bool:
 	#pass # Replace with function body.
 #
 
+func enabled(minigame):
+	for m in broken_mingames:
+		if m == minigame: return false
+	return true
+
+func skip_to_final_year():
+	year+=1
+	bone_health -= decay_rate
+	cardio_health -= decay_rate
+	broken_mingames.append(random_minigame())
+	if year < final_year+1: 
+		skip_to_final_year()
+
 func sec_to_string(x) -> String:
-	return str((int)(x/60))+":"+str(((int)(x))%60)
+	var s = ""
+	if (((int)(x))%60 < 10):
+		s = "0"
+	return str((int)(x/60))+":"+s+str(((int)(x))%60)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -141,4 +157,5 @@ func _process(delta: float) -> void:
 		timer-=delta
 		display.get_child(5).text = sec_to_string(timer)
 		if timer < 0:
+			skip_to_final_year()
 			end_game()

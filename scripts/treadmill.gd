@@ -74,5 +74,6 @@ func OnClick(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 # PUT RESULT OF GAME HERE
 # IE ENERGY SPENT AND ADDING SCORE TO BASE.CARDIO
 func _on_back_to_main_pressed() -> void:
-	baseScript.cardio_task_completed((1/3) * loopCount, 10)
+	BaseScript.cardio_task_completed((1/3) * loopCount, 10)
+	BaseScript.do_task(1)
 	$BackToMain._on_pressed()

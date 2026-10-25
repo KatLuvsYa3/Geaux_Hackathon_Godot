@@ -10,6 +10,7 @@ var movementCount = 0
 var last_ratio = 0
 var current_ratio = 0
 
+@export var max_speed: int = 66
 @export var speed: float = 1.0
 var acceleration: float = 0
 
@@ -44,6 +45,12 @@ func _process(delta):
 		if minigameStart:
 			mouseExited()
 	
+	#TEXT
+	#display loop count
+	$LoopCount.text = str(loopCount)+"/3"
+	
+	#Motivation text (needed holy fuck its hard)
+	
 	#exit move if not active
 	if !minigameStart:
 		return
@@ -58,8 +65,8 @@ func _process(delta):
 		
 		speed += acceleration
 		
-		if speed > 100:
-			speed = 100
+		if speed > max_speed:
+			speed = max_speed
 	
 	movementCount += 1
 	character.progress += speed * delta
@@ -69,6 +76,7 @@ func _process(delta):
 		if loopCount == 3:
 			minigameStart = false
 			#change text as needed
+			$MotivationText.text = "Great Workout!"
 		
 	last_ratio = current_ratio
 	
@@ -76,6 +84,8 @@ func _process(delta):
 
 func mouseEntered() -> void:
 	print("Mouse Entered")
+	
+	#FINISH TEXT
 
 
 func mouseExited() -> void:
@@ -83,20 +93,10 @@ func mouseExited() -> void:
 	if minigameStart:
 		minigameStart = false
 	
-	
-	#Set text to try agaub or something
-
-#
-#func OnClick(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	#if event is InputEventMouseButton:
-		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			#if movementCount == 0:
-				#minigameStart = true
-			#return
 
 # PUT RESULT OF GAME HERE
 # IE ENERGY SPENT AND ADDING SCORE TO BASE.CARDIO
 func _on_back_to_main_pressed() -> void:
-	$BackToMain._on_pressed() #keep to stop signal race
 	baseScript.cardio_task_completed((1/3) * loopCount, 10)
-	baseScript.change_energy(-1)
+	BaseScript.do_task(1)
+	$BackToMain._on_pressed() #keep to stop signal race

@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bruf17ea76vhy"]
 
+[ext_resource type="Script" uid="uid://8wwatip0eksv" path="res://scripts/maintainance.gd" id="1_ymgao"]
 [ext_resource type="Script" uid="uid://bidfl3lx6mwrm" path="res://scripts/minigame_button.gd" id="2_8e6wv"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="3_3gko3"]
 [ext_resource type="Texture2D" uid="uid://cnvxmvt7got8y" path="res://assets/Sprites/maintainance.png" id="3_ymgao"]
 
 [node name="Maintainance" type="Node2D" unique_id=2013533969]
+script = ExtResource("1_ymgao")
 
 [node name="Label" type="Label" parent="." unique_id=1220413178]
 offset_left = 99.0
@@ -39,6 +41,17 @@ z_index = -1
 position = Vector2(128, 72)
 texture = ExtResource("3_ymgao")
 metadata/_edit_lock_ = true
+
+[node name="Fixable" type="Label" parent="." unique_id=796686424]
+offset_left = -18.0
+offset_top = 58.999992
+offset_right = 149.0
+offset_bottom = 89.99999
+rotation = 0.16853823
+theme_override_font_sizes/font_size = 12
+text = "Nothing 
+to fix :D"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Fix" to="Fix" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

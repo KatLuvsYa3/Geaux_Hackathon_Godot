@@ -84,12 +84,12 @@ func fade_change():
 	fade.play()
 
 func random_minigame():
-	var x = randi_range(0,3)
+	var x = randi_range(0,2)
 	match x:
 		0: return Minigames.TREADMILL
-		1: return Minigames.CATASTROPHE
+		1: return Minigames.SCANNING
 		2: return Minigames.CULTURE
-		3: return Minigames.SCANNING
+		3: return Minigames.CATASTROPHE
 
 func new_year() -> void:
 	year+=1
@@ -110,7 +110,6 @@ func do_task(en_req: int) -> bool:
 
 func maintainance_task_completed():
 	broken_mingames.pop_front()
-	print(broken_mingames)
 
 func start_minigame(game: Minigames):
 	match(game):
@@ -122,7 +121,9 @@ func research_task_completed(percentage: float, max_score: int):
 	research_value += percentage*max_score
 
 func cardio_task_completed(percentage: float, max_score: int):
+	print(percentage*max_score*0.01)
 	cardio_health += percentage*max_score*0.01
+	print(cardio_health)
 	if cardio_health > 1.0: cardio_health = 1.0
 
 func bone_task_completed(percentage: float, max_score: int):
@@ -140,6 +141,8 @@ func out_of_bounds(pos: Vector2) -> bool:
 #
 
 func enabled(minigame):
+	if minigame == Minigames.MAINTANENCE and broken_mingames.size() < 1:
+		return false
 	for m in broken_mingames:
 		if m == minigame: return false
 	return true

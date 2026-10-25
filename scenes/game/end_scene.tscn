@@ -1,16 +1,52 @@
 [gd_scene format=3 uid="uid://dxtojxul7hktr"]
 
-[ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_w82kw"]
+[ext_resource type="Script" uid="uid://c6r4t77dywn84" path="res://scripts/end_scene.gd" id="1_rykep"]
+[ext_resource type="Texture2D" uid="uid://c2rch3ksvho4u" path="res://assets/Sprites/end_back.png" id="1_sx17s"]
+[ext_resource type="Texture2D" uid="uid://lpo1fd488g2n" path="res://assets/Sprites/strongend.png" id="2_bok80"]
+[ext_resource type="Texture2D" uid="uid://d1n1drg55ywbm" path="res://assets/Sprites/aliveend.png" id="3_ymme7"]
+[ext_resource type="Texture2D" uid="uid://c1fdeyq26mtwx" path="res://assets/Sprites/mrbusinessend.png" id="4_jtib1"]
+[ext_resource type="Texture2D" uid="uid://drha70jcnx801" path="res://assets/Sprites/greatend.png" id="5_rykep"]
+[ext_resource type="Texture2D" uid="uid://bx6yyehexwwuj" path="res://assets/Sprites/firedend.png" id="6_wp3ck"]
+[ext_resource type="Texture2D" uid="uid://ctroviqjsrs10" path="res://assets/Sprites/okayend.png" id="7_q5gbd"]
+[ext_resource type="Texture2D" uid="uid://dvki2codnww8m" path="res://assets/Sprites/enddead.png" id="9_wp3ck"]
 
 [node name="EndScene" type="Node2D" unique_id=1072547113]
+script = ExtResource("1_rykep")
 
-[node name="TemPexercise" type="Sprite2D" parent="." unique_id=571027644]
+[node name="EndBack" type="Sprite2D" parent="." unique_id=768499255]
 position = Vector2(128, 72)
-texture = ExtResource("1_w82kw")
+texture = ExtResource("1_sx17s")
 
-[node name="Label" type="Label" parent="." unique_id=1730645187]
-offset_left = 36.0
-offset_top = 91.0
-offset_right = 181.0
-offset_bottom = 109.0
-text = "END GAME EVAL"
+[node name="Strongend" type="Sprite2D" parent="." unique_id=1148008646]
+visible = false
+position = Vector2(128, 72)
+texture = ExtResource("2_bok80")
+
+[node name="Aliveend" type="Sprite2D" parent="." unique_id=1616034171]
+visible = false
+position = Vector2(128, 72)
+texture = ExtResource("3_ymme7")
+
+[node name="Mrbusinessend" type="Sprite2D" parent="." unique_id=14859703]
+position = Vector2(128, 72)
+texture = ExtResource("4_jtib1")
+
+[node name="Greatend" type="Sprite2D" parent="." unique_id=1145484562]
+visible = false
+position = Vector2(128, 72)
+texture = ExtResource("5_rykep")
+
+[node name="Firedend" type="Sprite2D" parent="." unique_id=1242072456]
+visible = false
+position = Vector2(128, 72)
+texture = ExtResource("6_wp3ck")
+
+[node name="Okayend" type="Sprite2D" parent="." unique_id=18467568]
+visible = false
+position = Vector2(128, 72)
+texture = ExtResource("7_q5gbd")
+
+[node name="Enddead" type="Sprite2D" parent="." unique_id=1934175178]
+visible = false
+position = Vector2(128, 72)
+texture = ExtResource("9_wp3ck")

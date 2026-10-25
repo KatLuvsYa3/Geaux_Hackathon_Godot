@@ -96,4 +96,13 @@ theme_override_font_sizes/font_size = 11
 text = "Finished?"
 script = ExtResource("5_wpmw1")
 
+[node name="FixedText" type="Label" parent="." unique_id=915844837]
+offset_left = 3.0
+offset_top = 66.0
+offset_right = 72.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 10
+text = "Not Fixed :("
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Finish" to="." method="_on_finish_pressed"]

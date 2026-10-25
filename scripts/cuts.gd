@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 func fill(x):
 	if get_child(x).get_child_count() < 2:
+		BaseScript.audio_controller.play_sound_from_tag("zap")
 		filled+=1
 		get_child(x).add_child($"../WiresUncut".duplicate())
 		get_child(x).get_child(0).visible = true

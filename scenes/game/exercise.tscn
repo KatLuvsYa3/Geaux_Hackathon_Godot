@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://fnjst8wgfd08"]
 
 [ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_01x61"]
-[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_lrd20"]
+[ext_resource type="Script" uid="uid://bidfl3lx6mwrm" path="res://scripts/minigame_button.gd" id="2_lrd20"]
+[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="3_p4sgm"]
 
 [node name="Exercise" type="Node2D" unique_id=532019883]
 
@@ -18,5 +19,15 @@ text = "Treadmill"
 script = ExtResource("2_lrd20")
 scene = "res://scenes/game/treadmill.tscn"
 minigame = 0
+energy_required = 1
+
+[node name="Back" type="Button" parent="." unique_id=921325450]
+offset_left = 7.0
+offset_top = 115.0
+offset_right = 64.0
+offset_bottom = 141.0
+text = "Back"
+script = ExtResource("3_p4sgm")
 
 [connection signal="pressed" from="Treadmill" to="Treadmill" method="_on_pressed"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

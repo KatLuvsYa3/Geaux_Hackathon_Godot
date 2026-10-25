@@ -11,7 +11,7 @@ enum Minigames{
 	NOT_IN
 }
 
-var broken_mingames = []
+@export var broken_mingames: Array[Minigames] = []
 
 enum GameState {
 	START,
@@ -35,7 +35,7 @@ enum GameState {
 @export var final_research_value = 10
 
 # in seconds
-@export var initial_time = 120
+@export var initial_time = 90
 @export var timer = 0
 @export var year = 1
 @export var final_year = 3
@@ -79,14 +79,12 @@ func fade_change():
 	fade.play()
 
 func random_minigame():
-	var x = randi_range(0,5)
+	var x = randi_range(0,3)
 	match x:
-		0: broken_mingames.append(Minigames.TREADMILL)
-		1: broken_mingames.append(Minigames.WEIGHTLIFTING)
-		2: broken_mingames.append(Minigames.CULTURE)
-		3: broken_mingames.append(Minigames.SCANNING)
-		4: broken_mingames.append(Minigames.CATASTROPHE)
-		5: broken_mingames.append(Minigames.MAINTANENCE)
+		0: return Minigames.TREADMILL
+		1: return Minigames.CATASTROPHE
+		2: return Minigames.CULTURE
+		3: return Minigames.SCANNING
 
 func new_year() -> void:
 	year+=1

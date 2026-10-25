@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bruf17ea76vhy"]
 
 [ext_resource type="Texture2D" uid="uid://doknnibynak56" path="res://assets/Sprites/TEMPexercise.png" id="1_espd1"]
-[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_8e6wv"]
+[ext_resource type="Script" uid="uid://bidfl3lx6mwrm" path="res://scripts/minigame_button.gd" id="2_8e6wv"]
+[ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="3_3gko3"]
 
 [node name="Maintainance" type="Node2D" unique_id=2013533969]
 
@@ -25,5 +26,15 @@ text = "Fix"
 script = ExtResource("2_8e6wv")
 scene = "res://scenes/game/wires.tscn"
 minigame = 5
+energy_required = 1
+
+[node name="Back" type="Button" parent="." unique_id=1853590935]
+offset_left = 5.0
+offset_top = 116.0
+offset_right = 62.0
+offset_bottom = 142.0
+text = "Back"
+script = ExtResource("3_3gko3")
 
 [connection signal="pressed" from="Treadmill" to="Treadmill" method="_on_pressed"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

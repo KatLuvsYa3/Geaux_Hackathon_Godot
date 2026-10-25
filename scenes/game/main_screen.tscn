@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://drvs57xpv1vsj"]
 
+[ext_resource type="Script" uid="uid://b3ysjhg6y5p4k" path="res://scripts/main_screen.gd" id="1_120j0"]
 [ext_resource type="Texture2D" uid="uid://b5jokneg67ruq" path="res://assets/Sprites/main.png" id="1_w03e3"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="2_56jkj"]
 [ext_resource type="Script" uid="uid://yjpi0cm8ucna" path="res://scripts/end_year_button.gd" id="3_yiin6"]
 [ext_resource type="Texture2D" uid="uid://dc0v8qwbe7syc" path="res://assets/Sprites/onchemdesk.png" id="4_1rkkt"]
 [ext_resource type="Texture2D" uid="uid://b5qv6cw6h7a5g" path="res://assets/Sprites/panel.png" id="5_3w53x"]
+[ext_resource type="Script" uid="uid://dd6ic0d0vlebc" path="res://scripts/broken_thing_part.gd" id="6_ugai4"]
 
 [node name="MainScreen" type="Node2D" unique_id=902538669]
+script = ExtResource("1_120j0")
 
 [node name="Main2" type="Sprite2D" parent="." unique_id=1647312932]
 z_index = -5
@@ -54,6 +57,28 @@ texture = ExtResource("4_1rkkt")
 [node name="Panel" type="Sprite2D" parent="." unique_id=316471582]
 position = Vector2(100, 44)
 texture = ExtResource("5_3w53x")
+
+[node name="BrokenThingPart" type="CPUParticles2D" parent="." unique_id=1597007095]
+position = Vector2(84, 82)
+emitting = false
+amount = 16
+lifetime = 0.7
+explosiveness = 0.6
+randomness = 0.78
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.6
+spread = 180.0
+initial_velocity_min = 40.0
+initial_velocity_max = 232.0
+angular_velocity_min = -51.84
+angular_velocity_max = -51.84
+linear_accel_min = 23.2
+linear_accel_max = 23.2
+color = Color(0.98, 0.9097666, 0.13719998, 1)
+hue_variation_min = -0.42
+hue_variation_max = 0.24
+script = ExtResource("6_ugai4")
 
 [connection signal="pressed" from="Exercise" to="Exercise" method="_on_pressed"]
 [connection signal="pressed" from="Maintainance" to="Maintainance" method="_on_pressed"]

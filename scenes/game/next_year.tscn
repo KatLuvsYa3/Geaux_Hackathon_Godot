@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dnsip4ejy6ukn"]
+
+[ext_resource type="Script" uid="uid://c2pb8ypippmh8" path="res://scripts/next_year.gd" id="1_xqc4l"]
+[ext_resource type="Texture2D" uid="uid://clip7aqitypt2" path="res://assets/Sprites/fade.png" id="1_ycqbq"]
+
+[node name="NextYear" type="Node2D" unique_id=318912638]
+script = ExtResource("1_xqc4l")
+
+[node name="Fade" type="Sprite2D" parent="." unique_id=986492281]
+position = Vector2(128, 72)
+texture = ExtResource("1_ycqbq")
+
+[node name="Label" type="Label" parent="." unique_id=1812219157]
+offset_left = 70.0
+offset_top = 63.0
+offset_right = 182.0
+offset_bottom = 81.0
+text = "Next year..."

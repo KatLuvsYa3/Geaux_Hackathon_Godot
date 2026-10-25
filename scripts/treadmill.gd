@@ -73,6 +73,7 @@ func _process(delta):
 	
 	if current_ratio < last_ratio:
 		loopCount += 1
+		
 		if loopCount == 3:
 			minigameStart = false
 			#change text as needed
@@ -97,6 +98,6 @@ func mouseExited() -> void:
 # PUT RESULT OF GAME HERE
 # IE ENERGY SPENT AND ADDING SCORE TO BASE.CARDIO
 func _on_back_to_main_pressed() -> void:
-	baseScript.cardio_task_completed(loopCount/3.0, 15)
+	baseScript.cardio_task_completed(loopCount/3.0, 30)
 	BaseScript.do_task(2)
 	$BackToMain._on_pressed() #keep to stop signal race

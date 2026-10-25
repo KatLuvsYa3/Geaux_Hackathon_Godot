@@ -8,7 +8,7 @@ var timer = 0
 func _ready() -> void:
 	if BaseScript.cardio_health < 0.5:
 		$Enddead.visible = true
-	elif BaseScript.cardio_health < 0.9:
+	elif BaseScript.cardio_health < 0.8:
 		$Aliveend.visible = true
 	else: $Strongend.visible = true
 	pass # Replace with function body.
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		if BaseScript.research_value < 0.4: 
 			$Firedend.visible = true
 			$Firedend.modulate.a = min(timer_length-timer_mid_length, timer-timer_mid_length)
-		elif BaseScript.research_value < 0.9:
+		elif BaseScript.research_value < 0.8:
 			$Okayend.visible = true
 			$Okayend.modulate.a = min(timer_length-timer_mid_length, timer-timer_mid_length)
 		else: 

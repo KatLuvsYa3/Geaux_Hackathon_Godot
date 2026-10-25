@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dtf12ct2yvsuc"]
+
+[node name="Prepped 2d char" type="Node2D" unique_id=1682533530]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1623698659]
+texture_filter = 1

@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bfdumk3rk1ygp"]
 
+[ext_resource type="Script" uid="uid://chqk7j3opjawo" path="res://scripts/research.gd" id="1_vmg33"]
 [ext_resource type="Script" uid="uid://bidfl3lx6mwrm" path="res://scripts/minigame_button.gd" id="2_77c6a"]
 [ext_resource type="Script" uid="uid://cos8e54bxu7vj" path="res://scripts/change_scene_button.gd" id="3_m3q3p"]
 [ext_resource type="Texture2D" uid="uid://do7l4wylio0qj" path="res://assets/Sprites/researchchoose.png" id="4_vgjrp"]
+[ext_resource type="Script" uid="uid://cfnwitwr8bgsv" path="res://scripts/broken_thing_part_research.gd" id="5_vmg33"]
 
 [node name="Research" type="Node2D" unique_id=42553809]
+script = ExtResource("1_vmg33")
 
 [node name="Culture" type="TextureButton" parent="." unique_id=1678510365]
 offset_left = 13.0
@@ -45,6 +48,30 @@ offset_top = 25.0
 offset_right = 173.0
 offset_bottom = 43.0
 text = "Pick a task!"
+
+[node name="BrokenThingPart" type="CPUParticles2D" parent="." unique_id=1977068699]
+position = Vector2(174, 82)
+emitting = false
+amount = 16
+lifetime = 0.7
+explosiveness = 0.6
+randomness = 0.78
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.21
+spread = 180.0
+initial_velocity_min = 40.0
+initial_velocity_max = 232.0
+angular_velocity_min = -51.84
+angular_velocity_max = -51.84
+linear_accel_min = 23.2
+linear_accel_max = 23.2
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color = Color(0.98, 0.9097666, 0.13719998, 1)
+hue_variation_min = -0.42
+hue_variation_max = 0.24
+script = ExtResource("5_vmg33")
 
 [connection signal="pressed" from="Culture" to="Culture" method="_on_pressed"]
 [connection signal="pressed" from="Checkup" to="Checkup" method="_on_pressed"]

@@ -56,6 +56,16 @@ position = Vector2(128, 72)
 texture = ExtResource("5_imlhv")
 metadata/_edit_lock_ = true
 
+[node name="Label" type="Label" parent="." unique_id=2029622024]
+offset_left = 43.0
+offset_top = 27.0
+offset_right = 218.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 10
+text = "Improve your health 
+by getting on the treadmill!"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Treadmill" to="." method="_on_treadmill_pressed"]
 [connection signal="pressed" from="Treadmill" to="Treadmill" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
